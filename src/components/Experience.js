@@ -10,8 +10,6 @@ import {
 import React, { useState, useRef , useEffect} from "react";
 
 import Typography from "@mui/material/Typography";
-import useOnScreen from "../hooks/useOnScreen";
-
 import { Box } from "@mui/system";
 import { Avatar, Link, Slide } from "@mui/material";
 import { experiences } from "../data/DataExperience";

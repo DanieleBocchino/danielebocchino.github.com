@@ -12,7 +12,6 @@ import {
   Zoom,
 } from "@mui/material";
 import { useRef, useEffect, useState } from "react";
-import useOnScreen from "../hooks/useOnScreen";
 import { certifications } from "../data/DataCertifications";
 import { Stack } from "@mui/system";
 import { Section, Title, Item } from "../styles/custom_styles";

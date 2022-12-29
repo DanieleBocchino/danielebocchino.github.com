@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
 import "./App.css";
-import React, { useRef } from "react";
+import React from "react";
+import useWindowSize from "./hooks/useElementSize";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Education from "./components/Education";
@@ -11,17 +13,18 @@ import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Certification from "./components/Certification";
 import { Box } from "@mui/material";
-import useOnScreen from "./hooks/useOnScreen";
 
 function App() {
-  const ref = useRef(null);
-  const containerRef = useRef(null);
-  const isVisible = useOnScreen(ref);
-  
+  const [isMobile, setMobile] = useState(false);
+  const size = useWindowSize();
+
+  useEffect(() => {
+    setMobile(size.width < 900);
+  }, [size]);
 
   return (
-    <Box ref={ref}>
-      <Hero />
+    <Box>
+      <Hero isMobile={isMobile} />
       <About />
       <Education />
       <Certification />

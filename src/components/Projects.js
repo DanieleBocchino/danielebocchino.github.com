@@ -14,7 +14,6 @@ import {
   Zoom,
 } from "@mui/material";
 
-import useOnScreen from "../hooks/useOnScreen";
 import { AddOutlined, Remove } from "@mui/icons-material";
 import ReactCardFlip from "react-card-flip";
 import { projects } from "../data/DataProjects";

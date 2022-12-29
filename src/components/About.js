@@ -14,7 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 
-import useOnScreen from "../hooks/useOnScreen";
 import { Link } from "react-scroll";
 import { about, extra, roles, scrollCard } from "../data/DataAbout";
 import { Section, Title, Item } from "../styles/custom_styles";
