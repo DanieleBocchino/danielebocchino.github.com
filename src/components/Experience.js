@@ -13,37 +13,18 @@ import Typography from "@mui/material/Typography";
 import useOnScreen from "../hooks/useOnScreen";
 
 import { Box } from "@mui/system";
-import { styled } from "@mui/material/styles";
 import { Avatar, Link, Slide } from "@mui/material";
 import { experiences } from "../data/DataExperience";
+import { Section, Title } from "../styles/custom_styles";
 
 function Experience() {
-  const Section = styled("div")(({ theme }) => ({
-    flexGrow: 1,
-    m:2
-  }));
-
-  const Title = styled("div")(({ theme }) => ({
-    background: "transparent",
-    fontFamily: "Seymour One",
-    fontStyle: "italic",
-    fontWeight: 700,
-    boxShadow: "none",
-    ...theme.typography.h4,
-    color: "white",
-    padding: theme.spacing(1),
-  }));
-
   const ref = useRef(null);
-
   const isVisible = useOnScreen(ref);
-
-
 
   return (
     <Box id="Experience" ref={ref}>
-      <Section>
-        <Title>Experiences</Title>
+      <Section dark>
+        <Title dark>Experiences</Title>
         <Timeline position="alternate" sx={{width:'95%'}}>
           {experiences.map((item, index) => {
             return (

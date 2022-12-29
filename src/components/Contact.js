@@ -12,40 +12,8 @@ import {
   colors,
 } from "@mui/material";
 import { useRef } from "react";
-
-const listContacts = [
-  {
-    icon: "/images/contact/email.png",
-    data: "bocchino.daniele@gmail.com",
-    name: "Email Address",
-    href: `mailto:bocchino.daniele@gmail.com`,
-  },
-  {
-    icon: "/images/contact/phone.png",
-    data: "(+39) 3311826439",
-    name: "Phone Number",
-    href: `tel:+393311826439`,
-  },
-  {
-    icon: "/images/contact/linkedin.png",
-    data: "Daniele Bocchino",
-    name: "Linkedin",
-    link: "https://www.linkedin.com/in/daniele-bocchino-aa602a20b/",
-    href: `https://www.linkedin.com/in/daniele-bocchino-aa602a20b/`,
-  },
-];
-
-const Title = styled("div")(({ theme }) => ({
-  background: "transparent",
-  fontFamily: "Seymour One",
-  fontStyle: "italic",
-  fontWeight: 700,
-  boxShadow: "none",
-  textAlign: "center",
-  ...theme.typography.h4,
-  color: "white",
-  padding: theme.spacing(1),
-}));
+import { contacts } from "../data/DataContacts";
+import { Title } from "../styles/custom_styles";
 
 function Contact() {
   const ref = useRef(null);
@@ -88,8 +56,8 @@ function ComplexGrid() {
         borderRadius: 10,
       }}
     >
-      <Title>Contacts</Title>
-      {listContacts.map((item, key) => (
+      <Title dark>Contacts</Title>
+      {contacts.map((item, key) => (
         <Container
           sx={{
             m: "auto",

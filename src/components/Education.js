@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import React, { useState } from "react";
 import {
@@ -20,61 +19,17 @@ import {
   Typography,
   Zoom,
 } from "@mui/material";
-import SchoolIcon from "@mui/icons-material/School";
-import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import { useRef } from "react";
-import useOnScreen from "../hooks/useOnScreen";
 import {
   OpenInNew,
   ExpandMoreOutlined,
-  WidthWideOutlined,
 } from "@mui/icons-material";
 import { educations, education_text } from "../data/DataEducations";
-import { useTheme } from "@mui/material/styles";
+import { Item, Section, Title } from "../styles/custom_styles";
 
 function Education() {
   const ref = useRef(null);
-  const theme = useTheme();
 
-  const containerRef = useRef(null);
-
-  const isVisible = useOnScreen(ref);
-
-  const personalCard = [
-    {
-      icon: <SchoolIcon sx={{ fontSize: 50 }} />,
-      title: "Education",
-      description: "MSc Computer Science Degree",
-    },
-    {
-      icon: <WorkspacePremiumIcon sx={{ fontSize: 50 }} />,
-      title: "Skills",
-      description: "MSc Computer Science Degree",
-    },
-  ];
-
-  const Section = styled("div")(({ theme }) => ({
-    background: theme.palette.text.primary,
-  }));
-
-  const Item = styled("div")(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(2),
-    margin: theme.spacing(1),
-    color: theme.palette.text.secondary,
-  }));
-
-  const Title = styled(Paper)(({ theme }) => ({
-    background: "transparent",
-    fontFamily:'Seymour One',
-     fontStyle:'italic',
-    boxShadow: "none",
-    ...theme.typography.h4,
-    color: "#123455",
-    padding: theme.spacing(1),
-  }));
-
- 
   const [state, setstate] = useState(false);
 
   window.addEventListener("resize", (event) => {
@@ -84,7 +39,7 @@ function Education() {
   return (
     <Box id="Education" sx={{ flexGrow: 1 }} ref={ref}>
       <Section>
-        <Title>Educations</Title>
+        <Title >Educations</Title>
         <Grid
           container
           spacing={{ xs: 1, sm: 1, md: 2 }}

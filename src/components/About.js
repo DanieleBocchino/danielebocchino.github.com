@@ -12,78 +12,22 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import SchoolIcon from "@mui/icons-material/School";
-import ComputerIcon from "@mui/icons-material/Computer";
-import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import TimelineIcon from "@mui/icons-material/Timeline";
+
 import { useRef } from "react";
 import useOnScreen from "../hooks/useOnScreen";
 import { Link } from "react-scroll";
-import { about, roles } from "../data/DataAbout";
+import { about, roles, scrollCard } from "../data/DataAbout";
+import { Section, Title, Item } from "../styles/custom_styles";
 
 function About() {
-  const Section = styled("div")(({ theme }) => ({
-    flexGrow: 1,
-    marginX: 2,
-    width: "100%",
-  }));
-
   const ref = useRef(null);
   const containerRef = useRef(null);
   const isVisible = useOnScreen(ref);
 
-
-
-  const personalCard = [
-    {
-      icon: <SchoolIcon sx={{ fontSize: 50 }} />,
-      title: "Education",
-      description: "University & Certification",
-      color: "#4285F4",
-    },
-    {
-      icon: <WorkspacePremiumIcon sx={{ fontSize: 50 }} />,
-      title: "Skills",
-      description: "My Hard & Soft Skills",
-      color: "#DB4437",
-    },
-    {
-      icon: <TimelineIcon sx={{ fontSize: 50 }} />,
-      title: "Experience",
-      description: "My work experiences",
-      color: "#F4B400",
-    },
-    {
-      icon: <ComputerIcon sx={{ fontSize: 50 }} />,
-      title: "Projects",
-      description: "My projects",
-      color: "#0F9D58",
-    },
-  ];
-
-  const Item = styled("div")(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(2),
-    margin: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
-
-  const Title = styled("div")(({ theme }) => ({
-    background: "transparent",
-    fontFamily: "Seymour One",
-    fontStyle: "italic",
-    fontWeight: 700,
-    boxShadow: "none",
-    ...theme.typography.h4,
-    color: "white",
-    padding: theme.spacing(1),
-  }));
-
   return (
     <Box ref={ref} id="About">
-      <Section>
-        <Title>About Me</Title>
+      <Section dark>
+        <Title dark>About Me</Title>
 
         <Grid
           container
@@ -151,7 +95,7 @@ function About() {
           spacing={{ xs: 1, md: 2 }}
           columns={{ xs: 2, sm: 8, lg: 16, xl: 16 }}
         >
-          {personalCard.map((item, index) => (
+          {scrollCard.map((item, index) => (
             <Grid item xs={2} sm={4} key={index}>
               <Item style={{ textAlign: "left", maxWidth: 350 }}>
                 <Link to={item.title} spy={true} smooth={true}>

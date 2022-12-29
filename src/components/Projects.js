@@ -13,7 +13,7 @@ import {
   Typography,
   Button,
   Link,
-  Fade,
+  Zoom,
 } from "@mui/material";
 
 import { useRef } from "react";
@@ -21,32 +21,11 @@ import useOnScreen from "../hooks/useOnScreen";
 import { AddOutlined, Remove } from "@mui/icons-material";
 import ReactCardFlip from "react-card-flip";
 import { projects } from "../data/DataProjects";
+import { Item, Section, Title } from "../styles/custom_styles";
 
 function Projects() {
   const ref = useRef(null);
   const isVisible = useOnScreen(ref);
-
-  const Title = styled("div")(({ theme }) => ({
-    background: "transparent",
-    fontFamily: "Seymour One",
-    fontStyle: "italic",
-    fontWeight: 700,
-    boxShadow: "none",
-    ...theme.typography.h4,
-    color: "#123455",
-    padding: theme.spacing(1),
-  }));
-
-  const Section = styled("div")(({ theme }) => ({
-    background: theme.palette.text.primary,
-  }));
-
-  const Item = styled("div")(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(2),
-    margin: theme.spacing(2),
-    color: theme.palette.text.secondary,
-  }));
 
   return (
     <Box id="Projects" sx={{ flexGrow: 1 }} ref={ref}>
@@ -65,8 +44,7 @@ function Projects() {
                   item={item}
                   index={index}
                   isVisible={isVisible}
-                  time={(projects.length + index) /5 }
-
+                  time={projects.length + index * 100}
                 />
               </Item>
             </Grid>
@@ -86,7 +64,12 @@ function CustomProjectItem({ item, index, isVisible, time }) {
   return (
     <ReactCardFlip isFlipped={expanded} flipDirection="horizontal">
       <Box id="Front">
-        <Fade in={isVisible} timeout={400 * time}>
+        <Zoom
+          in={isVisible}
+          unmountOnExit
+          mountOnEnter
+          style={{ transitionDelay: time }}
+        >
           <Card sx={{ borderRadius: 5, height: "100%", paddingBottom: 1 }}>
             <CardHeader
               avatar={
@@ -140,27 +123,26 @@ function CustomProjectItem({ item, index, isVisible, time }) {
               </Button>
             </CardActions>
           </Card>
-          </Fade>
+        </Zoom>{" "}
+      </Box>
 
-        </Box>
+      <Box id="back">
+        <Card sx={{ borderRadius: 5, height: "100%" }}>
+          <CardContent>
+            <Typography paragraph>{item.description}</Typography>
+          </CardContent>
 
-        <Box id="back">
-          <Card sx={{ borderRadius: 5, height: "100%" }}>
-            <CardContent>
-              <Typography paragraph>{item.description}</Typography>
-            </CardContent>
-
-            <CardActions disableSpacing>
-              <Button
-                variant="outlined"
-                startIcon={<Remove />}
-                onClick={handleExpandClick}
-                sx={{ ml: 1 }}
-              >
-                Show Less
-              </Button>
-            </CardActions>
-          </Card>
+          <CardActions disableSpacing>
+            <Button
+              variant="outlined"
+              startIcon={<Remove />}
+              onClick={handleExpandClick}
+              sx={{ ml: 1 }}
+            >
+              Show Less
+            </Button>
+          </CardActions>
+        </Card>
       </Box>
     </ReactCardFlip>
   );
