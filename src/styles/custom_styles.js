@@ -16,7 +16,7 @@ export const Title = styled("div")(({ theme, props, dark = false }) => ({
   fontStyle: "italic",
   fontWeight: 700,
   boxShadow: "none",
-  ...theme.typography.h4,
+  ...theme.typography.h3,
   color: dark ? "white" : "#123455",
   padding: theme.spacing(1),
   ...props,

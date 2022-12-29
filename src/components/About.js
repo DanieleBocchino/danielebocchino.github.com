@@ -1,25 +1,26 @@
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Avatar,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
+  IconButton,
   Slide,
   Stack,
+  Tooltip,
   Typography,
 } from "@mui/material";
 
 import { useRef } from "react";
 import useOnScreen from "../hooks/useOnScreen";
 import { Link } from "react-scroll";
-import { about, roles, scrollCard } from "../data/DataAbout";
+import { about, extra, roles, scrollCard } from "../data/DataAbout";
 import { Section, Title, Item } from "../styles/custom_styles";
 
-function About() {
+function About({ is }) {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const isVisible = useOnScreen(ref);
@@ -53,9 +54,29 @@ function About() {
                   }}
                 />
 
-                <Typography sx={{ mt: 3 }} variant="h3">
+                <Typography sx={{ mt: 3, mb: 2 }} variant="h4">
                   {roles}
                 </Typography>
+                {extra.map((item, index) => (
+                  <Box
+                    key={index}
+                    component="div"
+                    sx={{
+                      display: "inline",
+                      p: 1,
+                    }}
+                  >
+                    <Tooltip title={item.title}>
+                      <IconButton
+                        aria-label={item.title}
+                        href={item.link}
+                        target="_blank"
+                      >
+                        {item.icon}
+                      </IconButton>
+                    </Tooltip>
+                  </Box>
+                ))}
               </Item>
             </Grid>
           </Slide>
@@ -130,7 +151,6 @@ function SpecialCard({ icon, title, description, color }) {
         boxShadow: state ? 5 : 3,
         color: state ? color : "#ffffff",
       }}
-      maxWidth={100}
     >
       <CardActionArea
         sx={{
@@ -146,7 +166,7 @@ function SpecialCard({ icon, title, description, color }) {
         onMouseLeave={() => setState(false)}
         onClick={() => setState(true)}
       >
-        <CardMedia textAlign="center">{icon}</CardMedia>
+        <CardMedia >{icon}</CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}

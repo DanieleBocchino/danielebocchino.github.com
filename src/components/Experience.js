@@ -7,7 +7,7 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 import Typography from "@mui/material/Typography";
 import useOnScreen from "../hooks/useOnScreen";
@@ -25,7 +25,10 @@ function Experience() {
     <Box id="Experience" ref={ref}>
       <Section dark>
         <Title dark>Experiences</Title>
-        <Timeline position="alternate" sx={{width:'95%'}}>
+        <Timeline
+          position="alternate"
+          sx={{ width: { xs: "100%", sm: "95%" } }}
+        >
           {experiences.map((item, index) => {
             return (
               <CustomTimeLineItem
@@ -63,7 +66,7 @@ function Experience() {
               <Typography variant="body2"> I was born</Typography>
             </TimelineContent>
           </TimelineItem>
-        </Timeline> 
+        </Timeline>
       </Section>
     </Box>
   );

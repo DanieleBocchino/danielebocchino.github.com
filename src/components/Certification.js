@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import React, { useState } from "react";
+import React from "react";
 import {
   Avatar,
   Button,
@@ -11,8 +11,6 @@ import {
   Typography,
   Zoom,
 } from "@mui/material";
-import SchoolIcon from "@mui/icons-material/School";
-import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import { useRef } from "react";
 import useOnScreen from "../hooks/useOnScreen";
 import { certifications } from "../data/DataCertifications";

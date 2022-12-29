@@ -1,4 +1,3 @@
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -32,8 +31,8 @@ function Contact() {
         <Container
           sx={{
             backgroundColor: colors.red,
-            my: "5vh",
-            mr: "5%",
+            my: 5,
+            mr: { xs: "0%", sm: "5%" },
             width: "50vh",
           }}
         >
@@ -57,8 +56,9 @@ function ComplexGrid() {
       }}
     >
       <Title dark>Contacts</Title>
-      {contacts.map((item, key) => (
+      {contacts.map((item, index) => (
         <Container
+          key={index}
           sx={{
             m: "auto",
             backgroundColor: "transparent",
@@ -83,11 +83,11 @@ function ComplexGrid() {
                   sx={{
                     m: "auto",
                     width: {
-                      xs: 35,
+                      xs: 30,
                       sm: 50,
                     },
                     height: {
-                      xs: 35,
+                      xs: 30,
                       sm: 50,
                     },
                   }}
@@ -97,7 +97,7 @@ function ComplexGrid() {
                 <Grid item xs container direction="column" spacing={0}>
                   <Grid item xs>
                     <Typography
-                      variant={{ xs: "subtitle4", sm: "subtitle1" }}
+                      variant= "body2"
                       component="div"
                     >
                       {item.name}

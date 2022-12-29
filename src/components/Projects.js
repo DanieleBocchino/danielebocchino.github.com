@@ -1,6 +1,4 @@
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import React, { useState } from "react";
 import {
@@ -56,7 +54,6 @@ function Projects() {
 }
 
 function CustomProjectItem({ item, index, isVisible, time }) {
-  const [mouseOver, setMouseOver] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => setExpanded(!expanded);

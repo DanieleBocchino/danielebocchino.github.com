@@ -4,7 +4,7 @@ import {
     PhoneIphone,
     School,
   } from "@mui/icons-material";
-  import React, { Component }  from 'react';
+  import React  from 'react';
 
 
 export const projects = [

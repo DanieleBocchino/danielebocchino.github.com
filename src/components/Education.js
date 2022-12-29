@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import React, { useState } from "react";
 import {
-  Avatar,
   Button,
   Card,
   CardActions,
@@ -15,15 +14,10 @@ import {
   Link,
   ListItemText,
   Pagination,
-  Slide,
   Typography,
-  Zoom,
 } from "@mui/material";
 import { useRef } from "react";
-import {
-  OpenInNew,
-  ExpandMoreOutlined,
-} from "@mui/icons-material";
+import { OpenInNew, ExpandMoreOutlined } from "@mui/icons-material";
 import { educations, education_text } from "../data/DataEducations";
 import { Item, Section, Title } from "../styles/custom_styles";
 
@@ -39,7 +33,7 @@ function Education() {
   return (
     <Box id="Education" sx={{ flexGrow: 1 }} ref={ref}>
       <Section>
-        <Title >Educations</Title>
+        <Title>Educations</Title>
         <Grid
           container
           spacing={{ xs: 1, sm: 1, md: 2 }}
@@ -64,7 +58,12 @@ function Education() {
                   sx={{ maxWidth: 500 }}
                 />
                 <CardContent>
-                  <Typography variant="body1" color="black" fontFamily='Quicksand' fontWeight={500}>
+                  <Typography
+                    variant="body1"
+                    color="black"
+                    fontFamily="Quicksand"
+                    fontWeight={500}
+                  >
                     {education_text}
                   </Typography>
                 </CardContent>
@@ -142,9 +141,9 @@ function SpecialCard({ item }) {
           component="a"
           href={item.link}
           target="_blank"
-          startDecorator={<OpenInNew />}
+          startIcon={<OpenInNew />}
         >
-          Go official website
+          Go to course website
         </Button>
         <ExpandMore
           expand={expanded}
@@ -163,6 +162,7 @@ function SpecialCard({ item }) {
             .map((item, index) => {
               return (
                 <ListItemText
+                  key={index}
                   primary={
                     <>
                       <Link href={item.link} underline="hover" target="_blank">
@@ -197,6 +197,5 @@ function SpecialCard({ item }) {
     </Card>
   );
 }
-
 
 export default Education;

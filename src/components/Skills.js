@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import React, { useState, useEffect } from "react";
 import {
@@ -12,7 +11,7 @@ import {
 } from "@mui/material";
 import { useRef } from "react";
 import useOnScreen from "../hooks/useOnScreen";
-import { RandomColor, SelectColor } from "../functions/ColorFunction";
+import { SelectColor } from "../functions/ColorFunction";
 import { Section, Title } from "../styles/custom_styles";
 import { softSkills,hardSkills } from "../data/DataSkills";
 
@@ -28,9 +27,7 @@ function Skills() {
 
         <Grid container spacing={0} columns={{ xs: 1, sm: 1, md: 2 }}>
           <Zoom
-            direction="right"
             in={isVisible}
-            out={!isVisible}
             timeout={1000} 
             mountOnEnter
             unmountOnExit
@@ -42,9 +39,7 @@ function Skills() {
             </Grid>
           </Zoom>
           <Zoom
-            direction="right"
             in={isVisible}
-            out={!isVisible}
             timeout={1000}
             mountOnEnter
             unmountOnExit
@@ -63,9 +58,7 @@ function Skills() {
 
         <Grid container spacing={0} columns={{ xs: 1, sm: 1, md: 2 }}>
           <Zoom
-            direction="right"
             in={isVisible}
-            out={!isVisible}
             timeout={1000}
             mountOnEnter
             unmountOnExit
@@ -77,9 +70,7 @@ function Skills() {
             </Grid>
           </Zoom>
           <Zoom
-            direction="right"
             in={isVisible}
-            out={!isVisible}
             timeout={1000}
             mountOnEnter
             unmountOnExit
@@ -163,7 +154,6 @@ function ProgressBar({ item, index, isVisible, randomColor }) {
         <Box sx={{ width: "100%" }}>
           <BorderLinearProgress
             height={10}
-            borderRadius={5}
             variant="determinate"
             value={progress}
           />

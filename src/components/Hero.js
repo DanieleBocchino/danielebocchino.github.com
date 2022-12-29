@@ -18,7 +18,7 @@ function Hero({ isMobile }) {
     const splitter = new GraphemeSplitter();
     return splitter.splitGraphemes(string);
   };
-  const DrawerAvatar = styled("grid")(({ theme }) => ({
+  const DrawerAvatar = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(0, 3),
@@ -64,7 +64,7 @@ function Hero({ isMobile }) {
           .pauseFor(1500)
           .deleteChars(15)
           .typeString(
-            "<span style='color: #DB4437;'><strong>MSc Student of Computer Science<strong> </span> 👨🏼‍🎓"
+            "<span style='color: #DB4437;'><strong>MSc Student in Computer Science<strong> </span> 👨🏼‍🎓"
           )
           .start();
       },
@@ -86,7 +86,7 @@ function Hero({ isMobile }) {
           .pauseFor(1500)
           .deleteChars(14)
           .typeString(
-            "<span style='color: #F4B400;'><strong>Mountain<strong> </span> ⛰️"
+            "<span style='color: #F4B400;'><strong>Mountains<strong> </span> ⛰️"
           )
           .start();
       },
@@ -98,7 +98,7 @@ function Hero({ isMobile }) {
           .pasteString(" Daniele@PC-MacBook-Pro ~ %")
           .pauseFor(500)
           .typeString(
-            " I my free time, I play <span style='color:#4285F4;'><strong>Football<strong></span> ⚽️"
+            " In my free time, I play <span style='color:#4285F4;'><strong>Football<strong></span> ⚽️"
           )
           .pauseFor(1500)
           .deleteChars(17)

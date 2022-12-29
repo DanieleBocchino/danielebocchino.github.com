@@ -1,9 +1,5 @@
-import { useState, useEffect } from "react";
 import "./App.css";
-import { BrowserRouter as Switch, Route, useLocation } from "react-router-dom";
-import React, { Component }  from 'react';
-
-import useWindowSize from "./hooks/useElementSize";
+import React from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Education from "./components/Education";
@@ -17,30 +13,17 @@ import Certification from "./components/Certification";
 import { Box } from "@mui/material";
 
 function App() {
-  const [isMobile, setMobile] = useState(false);
-  const size = useWindowSize();
-  const drawerWidth = 300;
-
-  useEffect(() => {
-    setMobile(size.width < 900);
-  }, [size]);
-
   return (
     <Box>
-
-      <Hero isMobile={isMobile} drawerWidth={drawerWidth} />
-      <About isMobile={isMobile} drawerWidth={drawerWidth} />
-      <Education isMobile={isMobile} drawerWidth={drawerWidth} />
-
-      <Certification isMobile={isMobile} drawerWidth={drawerWidth} />
-
-      <Experience isMobile={isMobile} drawerWidth={drawerWidth} /> 
-
-      <Skills isMobile={isMobile} drawerWidth={drawerWidth} />
-
-       <Projects isMobile={isMobile} drawerWidth={drawerWidth} />
-      <Contact isMobile={isMobile} drawerWidth={drawerWidth} /> 
-      <Footer isMobile={isMobile} drawerWidth={drawerWidth} />
+      <Hero />
+      <About />
+      <Education />
+      <Certification />
+      <Experience />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
       <Floating />
     </Box>
   );
