@@ -160,7 +160,7 @@ function Hero({ isMobile }) {
     },
     {
       title: "Experience",
-      image: "/images/hero/Experience_icon.png",
+      image: "/images/hero/experience_icon.png",
     },
     {
       title: "Projects",
