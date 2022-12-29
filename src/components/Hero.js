@@ -1,7 +1,7 @@
 import { Avatar, Box, Fade, Grid, Paper, Tooltip, Zoom } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import GraphemeSplitter from "grapheme-splitter";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-scroll";
 import { Clear } from "@mui/icons-material";
@@ -9,6 +9,10 @@ import { Clear } from "@mui/icons-material";
 function Hero({ isMobile }) {
   const [writeState, setWriteState] = useState(false);
   const monitorRef = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => setWriteState(true), 2500);
+  }, []);
 
   const stringSplitter = (string) => {
     const splitter = new GraphemeSplitter();
@@ -259,7 +263,7 @@ function Hero({ isMobile }) {
                     })}
                   </Box>
                   {writeState && (
-                    <Zoom in={writeState} timeout={75}>
+                    <Zoom in={writeState} timeout={75} unmountOnExit mountOnEnter>
                       <Paper
                         sx={{
                           m: "auto ",
@@ -278,6 +282,7 @@ function Hero({ isMobile }) {
                       >
                         <Avatar
                           sx={{
+                            cursor:'pointer',
                             m: "1%",
                             height: "3%",
                             width: "2%",
@@ -324,9 +329,10 @@ function Docker({ item, setWriteState }) {
       title={item.title}
       arrow
       placement="right"
-      sx={{ color: "#123456" }}
+      sx={{ color: "#123456",  }}
+      
     >
-      <div>
+      <div style={{cursor:'pointer'}}>
         <Link to={item.title} spy={true} smooth={true}>
           <Avatar
             src={item.image}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Switch, Route, useLocation } from "react-router-dom";
+import React, { Component }  from 'react';
 
 import useWindowSize from "./hooks/useElementSize";
 import Hero from "./components/Hero";
@@ -13,6 +14,7 @@ import Floating from "./components/Floating";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Certification from "./components/Certification";
+import { Box } from "@mui/material";
 
 function App() {
   const [isMobile, setMobile] = useState(false);
@@ -24,7 +26,7 @@ function App() {
   }, [size]);
 
   return (
-    <>
+    <Box>
 
       <Hero isMobile={isMobile} drawerWidth={drawerWidth} />
       <About isMobile={isMobile} drawerWidth={drawerWidth} />
@@ -40,7 +42,7 @@ function App() {
       <Contact isMobile={isMobile} drawerWidth={drawerWidth} /> 
       <Footer isMobile={isMobile} drawerWidth={drawerWidth} />
       <Floating />
-    </>
+    </Box>
   );
 }
 

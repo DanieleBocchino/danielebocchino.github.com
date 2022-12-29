@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Avatar,
   Card,
@@ -22,15 +22,17 @@ import { Link } from "react-scroll";
 import { about, roles } from "../data/DataAbout";
 
 function About() {
-  const ref = useRef(null);
-  const containerRef = useRef(null);
-  const isVisible = useOnScreen(ref);
-
   const Section = styled("div")(({ theme }) => ({
     flexGrow: 1,
     marginX: 2,
     width: "100%",
   }));
+
+  const ref = useRef(null);
+  const containerRef = useRef(null);
+  const isVisible = useOnScreen(ref);
+
+
 
   const personalCard = [
     {
@@ -67,24 +69,21 @@ function About() {
     color: theme.palette.text.secondary,
   }));
 
-  const Title = styled('div')(({ theme }) => ({
+  const Title = styled("div")(({ theme }) => ({
     background: "transparent",
-    fontFamily:'Seymour One',
-     fontStyle:'italic',
-     fontWeight:700,
+    fontFamily: "Seymour One",
+    fontStyle: "italic",
+    fontWeight: 700,
     boxShadow: "none",
     ...theme.typography.h4,
     color: "white",
     padding: theme.spacing(1),
   }));
 
-
-
-
   return (
     <Box ref={ref} id="About">
       <Section>
-        <Title >About Me</Title>
+        <Title>About Me</Title>
 
         <Grid
           container
@@ -96,7 +95,7 @@ function About() {
             mountOnEnter
             unmountOnExit
             direction="left"
-            in={true}
+            in={isVisible}
             timeout={500}
           >
             <Grid item xs={4} ref={containerRef}>
@@ -109,8 +108,10 @@ function About() {
                     height: "100%",
                   }}
                 />
-                
-                <Typography sx={{mt:3}} variant="h3">{roles}</Typography>
+
+                <Typography sx={{ mt: 3 }} variant="h3">
+                  {roles}
+                </Typography>
               </Item>
             </Grid>
           </Slide>
@@ -118,7 +119,7 @@ function About() {
             mountOnEnter
             unmountOnExit
             direction="right"
-            in={true}
+            in={isVisible}
             timeout={500}
             container={containerRef.current}
           >
@@ -152,7 +153,7 @@ function About() {
         >
           {personalCard.map((item, index) => (
             <Grid item xs={2} sm={4} key={index}>
-            <Item style={{ textAlign: "left", maxWidth:350 }}>
+              <Item style={{ textAlign: "left", maxWidth: 350 }}>
                 <Link to={item.title} spy={true} smooth={true}>
                   <SpecialCard
                     icon={item.icon}
@@ -184,7 +185,6 @@ function SpecialCard({ icon, title, description, color }) {
         alignItems: "center",
         boxShadow: state ? 5 : 3,
         color: state ? color : "#ffffff",
-        
       }}
       maxWidth={100}
     >

@@ -7,50 +7,51 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import Typography from "@mui/material/Typography";
 import useOnScreen from "../hooks/useOnScreen";
 
 import { Box } from "@mui/system";
 import { styled } from "@mui/material/styles";
-import { Avatar, Link,  Slide } from "@mui/material";
+import { Avatar, Link, Slide } from "@mui/material";
 import { experiences } from "../data/DataExperience";
 
-
-
 function Experience() {
-  const ref = useRef(null);
-  const isVisible = useOnScreen(ref);
   const Section = styled("div")(({ theme }) => ({
     flexGrow: 1,
-    margin: 2,
-    width: "100%",
+    m:2
   }));
 
-  const Title = styled('div')(({ theme }) => ({
+  const Title = styled("div")(({ theme }) => ({
     background: "transparent",
-    fontFamily:'Seymour One',
-     fontStyle:'italic',
-     fontWeight:700,
+    fontFamily: "Seymour One",
+    fontStyle: "italic",
+    fontWeight: 700,
     boxShadow: "none",
     ...theme.typography.h4,
     color: "white",
     padding: theme.spacing(1),
   }));
-  
+
+  const ref = useRef(null);
+
+  const isVisible = useOnScreen(ref);
+
+
+
   return (
-    <Box id="Certification" ref={ref}>
+    <Box id="Experience" ref={ref}>
       <Section>
-        <Title>Experience</Title>
-        <Timeline position="alternate">
+        <Title>Experiences</Title>
+        <Timeline position="alternate" sx={{width:'95%'}}>
           {experiences.map((item, index) => {
             return (
               <CustomTimeLineItem
                 key={index}
                 item={item}
                 time={experiences.length - index}
-                isVisible={isVisible}
+                animation={isVisible}
               />
             );
           })}
@@ -81,15 +82,21 @@ function Experience() {
               <Typography variant="body2"> I was born</Typography>
             </TimelineContent>
           </TimelineItem>
-        </Timeline>
+        </Timeline> 
       </Section>
     </Box>
   );
-  function CustomTimeLineItem({ item, time, isVisible }) {
+  function CustomTimeLineItem({ item, time, animation }) {
     const [mouseOver, setMouseOver] = useState(false);
 
     return (
-      <Slide direction="right" in={isVisible} timeout={400 * time}>
+      <Slide
+        direction="right"
+        in={animation}
+        timeout={400 * time}
+        unmountOnExit
+        mountOnEnter
+      >
         <TimelineItem>
           <TimelineOppositeContent
             sx={{ m: "auto 0" }}

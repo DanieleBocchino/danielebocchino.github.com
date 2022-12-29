@@ -166,7 +166,9 @@ function Skills() {
             direction="right"
             in={isVisible}
             out={!isVisible}
-            timeout={1000}
+            timeout={1000} 
+            mountOnEnter
+            unmountOnExit
           >
             <Grid item xs={1}>
               {hardSkills.slice(0, hardSkills.length / 2).map((item, index) => (
@@ -179,6 +181,8 @@ function Skills() {
             in={isVisible}
             out={!isVisible}
             timeout={1000}
+            mountOnEnter
+            unmountOnExit
           >
             <Grid item xs={1}>
               {hardSkills
@@ -198,6 +202,8 @@ function Skills() {
             in={isVisible}
             out={!isVisible}
             timeout={1000}
+            mountOnEnter
+            unmountOnExit
           >
             <Grid item xs={1}>
               {softSkills.slice(0, softSkills.length / 2).map((item, index) => (
@@ -210,6 +216,8 @@ function Skills() {
             in={isVisible}
             out={!isVisible}
             timeout={1000}
+            mountOnEnter
+            unmountOnExit
           >
             <Grid item xs={1}>
               {softSkills

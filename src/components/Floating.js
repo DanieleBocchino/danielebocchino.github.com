@@ -19,7 +19,7 @@ function Floating() {
 
   return (
     <Link to="Hero" spy={true} smooth={true}>
-      <Zoom in={state} out={!state} unmountOnExit>
+      <Zoom in={state} out={!state} unmountOnExit mountOnEnter>
         <Fab
           sx={{
             position: "fixed",

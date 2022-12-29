@@ -1,8 +1,10 @@
 import {
+  Biotech,
     LanguageOutlined,
     PhoneIphone,
     School,
   } from "@mui/icons-material";
+  import React, { Component }  from 'react';
 
 
 export const projects = [
@@ -95,7 +97,7 @@ export const projects = [
       ],
       available: [""],
       link: "https://islab.di.unimi.it/",
-      icon: <LanguageOutlined />,
+      icon: <Biotech />,
       color: "#6fbf73",
     },
     {
@@ -129,7 +131,7 @@ export const projects = [
       ],
       available: [""],
       link: null,
-      icon: <LanguageOutlined />,
+      icon: <Biotech />,
       color: "#6fbf73",
     },
   

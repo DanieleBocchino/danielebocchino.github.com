@@ -1,8 +1,6 @@
-import {
-  Biotech,
-  LaptopMac,
-  SchoolOutlined,
-} from "@mui/icons-material";
+import { Biotech, LaptopMac, SchoolOutlined } from "@mui/icons-material";
+
+import React from "react";
 
 export const experiences = [
   {
@@ -35,7 +33,8 @@ export const experiences = [
     date: "Aug. 2021 - Mar. 2022 ",
     icon: <Biotech />,
     color: "success",
-    link: "https://www.unimi.it/it/ateneo/lavora-con-noi/consulenze-e-collaborazioni/avvisi-pubblici-di-consulenza-e-collaborazione/supporto-alla-ricerca-progetto-prin-2017-atlante-prosopografico-delle-letterature-romanze-medievali",
+    link:
+      "https://www.unimi.it/it/ateneo/lavora-con-noi/consulenze-e-collaborazioni/avvisi-pubblici-di-consulenza-e-collaborazione/supporto-alla-ricerca-progetto-prin-2017-atlante-prosopografico-delle-letterature-romanze-medievali",
   },
   {
     place: "Università degli Studi di Milano",
@@ -45,7 +44,8 @@ export const experiences = [
     date: "Jun. 2021 - Nov. 2021 ",
     icon: <Biotech />,
     color: "success",
-    link: "https://www.unimi.it/it/ateneo/lavora-con-noi/consulenze-e-collaborazioni/avvisi-pubblici-di-consulenza-e-collaborazione/supporto-alla-ricerca-progetto-values-across-space-and-time-vast",
+    link:
+      "https://www.unimi.it/it/ateneo/lavora-con-noi/consulenze-e-collaborazioni/avvisi-pubblici-di-consulenza-e-collaborazione/supporto-alla-ricerca-progetto-values-across-space-and-time-vast",
   },
   {
     place: "Università degli Studi di Milano",
