@@ -7,7 +7,7 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef , useEffect} from "react";
 
 import Typography from "@mui/material/Typography";
 import useOnScreen from "../hooks/useOnScreen";
@@ -19,7 +19,19 @@ import { Section, Title } from "../styles/custom_styles";
 
 function Experience() {
   const ref = useRef(null);
-  const isVisible = useOnScreen(ref);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const setVisible = () => {
+    if (window.scrollY + window.innerHeight >= ref.current.offsetTop)
+      setIsVisible(true);
+  };
+  useEffect(() => {
+    setVisible();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) window.addEventListener("scroll", setVisible);
+  }, []);
 
   return (
     <Box id="Experience" ref={ref}>

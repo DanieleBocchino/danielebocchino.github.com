@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Avatar,
   LinearProgress,
@@ -9,15 +9,25 @@ import {
   Typography,
   Zoom,
 } from "@mui/material";
-import { useRef } from "react";
-import useOnScreen from "../hooks/useOnScreen";
 import { SelectColor } from "../functions/ColorFunction";
 import { Section, Title } from "../styles/custom_styles";
 import { softSkills,hardSkills } from "../data/DataSkills";
 
 function Skills() {
   const ref = useRef(null);
-  const isVisible = useOnScreen(ref);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const setVisible = () => {
+    if (window.scrollY + window.innerHeight >= ref.current.offsetTop)
+      setIsVisible(true);
+  };
+  useEffect(() => {
+    setVisible();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) window.addEventListener("scroll", setVisible);
+  }, []);
 
   return (
     <Box id="Skills" sx={{ mt:5, mb:5}} ref={ref}>

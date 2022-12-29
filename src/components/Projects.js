@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Avatar,
   Card,
@@ -14,7 +14,6 @@ import {
   Zoom,
 } from "@mui/material";
 
-import { useRef } from "react";
 import useOnScreen from "../hooks/useOnScreen";
 import { AddOutlined, Remove } from "@mui/icons-material";
 import ReactCardFlip from "react-card-flip";
@@ -23,7 +22,19 @@ import { Item, Section, Title } from "../styles/custom_styles";
 
 function Projects() {
   const ref = useRef(null);
-  const isVisible = useOnScreen(ref);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const setVisible = () => {
+    if (window.scrollY + window.innerHeight >= ref.current.offsetTop)
+      setIsVisible(true);
+  };
+  useEffect(() => {
+    setVisible();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) window.addEventListener("scroll", setVisible);
+  }, []);
 
   return (
     <Box id="Projects" sx={{ flexGrow: 1 }} ref={ref}>

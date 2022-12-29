@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   Avatar,
   Card,
@@ -14,16 +14,27 @@ import {
   Typography,
 } from "@mui/material";
 
-import { useRef } from "react";
 import useOnScreen from "../hooks/useOnScreen";
 import { Link } from "react-scroll";
 import { about, extra, roles, scrollCard } from "../data/DataAbout";
 import { Section, Title, Item } from "../styles/custom_styles";
 
-function About({ is }) {
+function About({}) {
   const ref = useRef(null);
   const containerRef = useRef(null);
-  const isVisible = useOnScreen(ref);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const setVisible = () => {
+    if (window.scrollY + window.innerHeight >= ref.current.offsetTop)
+      setIsVisible(true);
+  };
+  useEffect(() => {
+    setVisible();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) window.addEventListener("scroll", setVisible);
+  }, []);
 
   return (
     <Box ref={ref} id="About">
@@ -166,7 +177,7 @@ function SpecialCard({ icon, title, description, color }) {
         onMouseLeave={() => setState(false)}
         onClick={() => setState(true)}
       >
-        <CardMedia >{icon}</CardMedia>
+        <CardMedia>{icon}</CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}

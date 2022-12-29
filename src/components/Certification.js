@@ -11,17 +11,27 @@ import {
   Typography,
   Zoom,
 } from "@mui/material";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import useOnScreen from "../hooks/useOnScreen";
 import { certifications } from "../data/DataCertifications";
 import { Stack } from "@mui/system";
 import { Section, Title, Item } from "../styles/custom_styles";
 
 function Certification() {
-  const ref = useRef(null);
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
 
-  const isVisible = useOnScreen(ref);
+  const setVisible = () => {
+    if (window.scrollY + window.innerHeight >= ref.current.offsetTop)
+      setIsVisible(true);
+  };
+  useEffect(() => {
+    setVisible();
+  }, []);
 
+  useEffect(() => {
+    if (!isVisible) window.addEventListener("scroll", setVisible);
+  }, []);
 
   return (
     <Box id="Certification" sx={{ flexGrow: 1 }} ref={ref}>
@@ -34,7 +44,7 @@ function Certification() {
                 <CertificationsBadge
                   item={item}
                   index={index}
-                  time={certifications.length + (index*500)}
+                  time={certifications.length + index * 500}
                   animation={isVisible}
                 />
               </Item>
@@ -49,7 +59,12 @@ function Certification() {
 function CertificationsBadge({ item, index, time, animation }) {
   return (
     <>
-      <Zoom in={animation} unmountOnExit mountOnEnter style={{ transitionDelay: time }}>
+      <Zoom
+        in={animation}
+        unmountOnExit
+        mountOnEnter
+        style={{ transitionDelay: time }}
+      >
         <Card sx={{ height: 250 }}>
           <CardHeader
             sx={{ height: 180, m: 0 }}
