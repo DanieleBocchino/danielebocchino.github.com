@@ -18,4 +18,11 @@ export const contacts = [
       link: "https://www.linkedin.com/in/daniele-bocchino-aa602a20b/",
       href: `https://www.linkedin.com/in/daniele-bocchino-aa602a20b/`,
     },
+    {
+      icon: "/images/contact/git.png",
+      data: "DanieleBocchino",
+      name: "GitHub",
+      link: "https://github.com/DanieleBocchino",
+      href: `https://github.com/DanieleBocchino`,
+    },
   ];

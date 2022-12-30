@@ -17,7 +17,7 @@ export const experiences = [
   {
     place: "Home",
     title: "Freelancer",
-    shortDescription: "",
+    shortDescription: "Create Website and Mobile application",
     description: "",
     date: "Jul. 2022 - Present ",
     icon: <LaptopMac />,

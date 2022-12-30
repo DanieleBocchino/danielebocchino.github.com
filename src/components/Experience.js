@@ -116,11 +116,11 @@ function Experience() {
             </Link>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: "12px", px: 2 }}>
-            <Typography variant="h6" component="span">
+          <TimelineContent sx={{ py: "12px", }}>
+            <Typography variant="h6" component="div">
               {item.title}
             </Typography>
-            <Typography variant="body2"> {item.shortDescription}</Typography>
+            <Typography variant="caption"> {item.shortDescription}</Typography>
           </TimelineContent>
         </TimelineItem>
       </Slide>

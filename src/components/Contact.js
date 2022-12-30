@@ -3,16 +3,19 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import React from "react";
 import {
-  Avatar,
   Fade,
   Button,
   Typography,
-  Container,
+  Card,
   colors,
+  CardContent,
+  CardMedia,
+  CardHeader,
 } from "@mui/material";
 import { useRef } from "react";
 import { contacts } from "../data/DataContacts";
 import { Title } from "../styles/custom_styles";
+import { Stack } from "@mui/system";
 
 function Contact() {
   const ref = useRef(null);
@@ -28,94 +31,80 @@ function Contact() {
       ref={ref}
     >
       <Fade in timeout={2000}>
-        <Container
+        <Box
           sx={{
             backgroundColor: colors.red,
-            my: 5,
-            mr: { xs: "0%", sm: "5%" },
-            width: "50vh",
+            position: "absolute",
+            right: 0,
+            m: 2,
+            width: "80%",
+            maxWidth: 500,
           }}
         >
-          <ComplexGrid />
-        </Container>
+          <GridCard />
+        </Box>
       </Fade>
     </Box>
   );
 }
 
-function ComplexGrid() {
+function GridCard() {
   return (
-    <Paper
+    <Card
       sx={{
-        p: 2,
-        margin: "auto",
-        flexGrow: 1,
-        backgroundColor: (theme) =>
-          theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-        borderRadius: 10,
+        borderRadius: [5],
+        justifyContent: "center",
+        textAlign: "center",
+        alignItems: "center",
+        background: "#1A2027",
+        alignItems: "center",
+        boxShadow: 5,
       }}
     >
-      <Title dark>Contacts</Title>
-      {contacts.map((item, index) => (
-        <Container
-          key={index}
-          sx={{
-            m: "auto",
-            backgroundColor: "transparent",
-            transition: "transform 0.15s ease-in-out",
-            "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
-            cursor: "pointer",
-          }}
-        >
-          <Button
-            sx={{ my: 2 }}
-            style={{ backgroundColor: "transparent" }}
-            fullWidth
-            variant="raised"
-            href={item.href}
-            target="_blank"
-          >
-            <Grid container spacing={2} sx={{ my: 0 }}>
-              <Grid item>
-                <Avatar
+      <CardHeader title={<Title dark>Contacts</Title>} />
+      <CardContent
+   
+      >
+        {contacts.map((item, index) => (
+          <Stack>
+            <Button
+              sx={{
+                p: 2,
+                justifyContent: "start",
+                transition: "transform 0.15s ease-in-out",
+                "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
+                backgroundColor: "transparent",
+              }}
+              fullWidth
+              variant="raised"
+              href={item.href}
+              target="_blank"
+              startIcon={
+                <img
                   src={item.icon}
-                  variant="square"
-                  sx={{
-                    m: "auto",
-                    width: {
-                      xs: 30,
-                      sm: 50,
-                    },
-                    height: {
-                      xs: 30,
-                      sm: 50,
-                    },
+                  style={{
+                    height: 50,
                   }}
                 />
-              </Grid>
-              <Grid item xs={10} sm container>
-                <Grid item xs container direction="column" spacing={0}>
-                  <Grid item xs>
-                    <Typography
-                      variant= "body2"
-                      component="div"
-                    >
-                      {item.name}
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      sx={{ textTransform: "lowercase" }}
-                    >
-                      {item.data}
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Button>
-        </Container>
-      ))}
-    </Paper>
+              }
+            >
+              <Stack>
+                <Typography
+                  variant="body2"
+                  component="div"
+                  sx={{ textAlign: "start" }}
+                >
+                  {item.name}
+                </Typography>
+                <Typography variant="caption" sx={{ textAlign: "start" }}>
+                  {item.data}
+                </Typography>
+              </Stack>
+            </Button>
+          </Stack>
+        ))}
+      </CardContent>
+    </Card>
   );
 }
 

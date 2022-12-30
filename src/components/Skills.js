@@ -124,7 +124,7 @@ function ProgressBar({ item, index, isVisible, randomColor }) {
   }, [index, item]);
 
   return (
-    <Box sx={{ width: "80%", m: "auto", my: 2 }}>
+    <Box sx={{ width: {xs:"90%",sm:'80%' }, m: "auto", my: 2 }}>
       <Box
         sx={{
           display: "flex",

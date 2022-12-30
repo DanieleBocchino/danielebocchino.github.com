@@ -28,8 +28,8 @@ function App() {
       <About />
       <Education />
       <Certification />
-      <Experience />
       <Skills />
+      <Experience />
       <Projects />
       <Contact />
       <Footer />

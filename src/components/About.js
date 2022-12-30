@@ -12,8 +12,8 @@ import {
   Stack,
   Tooltip,
   Typography,
+  Link as MuiLink,
 } from "@mui/material";
-
 import { Link } from "react-scroll";
 import { about, extra, roles, scrollCard } from "../data/DataAbout";
 import { Section, Title, Item } from "../styles/custom_styles";
@@ -36,7 +36,7 @@ function About({}) {
   }, []);
 
   return (
-    <Box ref={ref} id="About">
+    <Box ref={ref} id="About" sx={{ flexGrow: 1 }}>
       <Section dark>
         <Title dark>About Me</Title>
 
@@ -64,9 +64,29 @@ function About({}) {
                   }}
                 />
 
-                <Typography sx={{ mt: 3, mb: 2 }} variant="h4">
+                <Typography sx={{ mt: 3, mb: 2 }} variant="h5" style={{fontFamily:'GloriaHallelujah'}}>
                   {roles}
                 </Typography>
+                <MuiLink
+                  underline="none"
+                  href="CV_DanieleBocchino.pdf"
+                  target="_blank"
+                >
+                  <Avatar
+                    variant="rounded"
+                    src="/images/qr.png"
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      maxWidth: 200,
+                      maxHeight: 240,
+                      m: "auto",
+                      p: 2,
+                      transition: "transform 0.15s ease-in-out",
+                      "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
+                    }}
+                  />
+                </MuiLink>
                 {extra.map((item, index) => (
                   <Box
                     key={index}
@@ -81,6 +101,10 @@ function About({}) {
                         aria-label={item.title}
                         href={item.link}
                         target="_blank"
+                        sx={{
+                          transition: "transform 0.15s ease-in-out",
+                          "&:hover": { transform: "scale3d(1.3, 1.3, 1.3)" },
+                        }}
                       >
                         {item.icon}
                       </IconButton>
@@ -112,8 +136,13 @@ function About({}) {
               <Item style={{ textAlign: "left" }}>
                 {about.map((item, index) => (
                   <Stack key={index} sx={{ m: 1 }}>
-                    <Typography variant="h6">{item.title}</Typography>
-                    <Typography variant="subtitle2">{item.text}</Typography>
+                    <Typography variant="h6" >{item.title}</Typography>
+                    <Typography
+                      variant="subtitle2"
+                      style={{ whiteSpace: "pre-line" }}
+                    >
+                      {item.text}
+                    </Typography>
                   </Stack>
                 ))}
               </Item>
@@ -123,20 +152,21 @@ function About({}) {
 
         <Grid
           container
-          spacing={{ xs: 1, md: 2 }}
-          columns={{ xs: 2, sm: 8, lg: 16, xl: 16 }}
+          spacing={{ xs: 1, sm: 2 }}
+          columns={{ xs: 4, sm: 8, lg: 16, xl: 16 }}
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
         >
           {scrollCard.map((item, index) => (
             <Grid item xs={2} sm={4} key={index}>
-              <Item style={{ textAlign: "left", maxWidth: 350 }}>
-                <Link to={item.title} spy={true} smooth={true}>
-                  <SpecialCard
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    color={item.color}
-                  />
-                </Link>
+              <Item sx={{ width: "90%", margin: "auto" }}>
+                <SpecialCard
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  color={item.color}
+                />
               </Item>
             </Grid>
           ))}
@@ -155,6 +185,7 @@ function SpecialCard({ icon, title, description, color }) {
         borderRadius: [5],
         justifyContent: "center",
         textAlign: "center",
+        alignItems: "center",
         background: state ? "transparent" : "#1A2027",
         backgroundColor: "transparent",
         alignItems: "center",
@@ -162,30 +193,32 @@ function SpecialCard({ icon, title, description, color }) {
         color: state ? color : "#ffffff",
       }}
     >
-      <CardActionArea
-        sx={{
-          padding: 2.5,
-          borderColor: "transparent",
-          boxShadow: "none",
-          backgroundColor: "transparent",
-          width: "100%",
-          height: "100%",
-          borderRadius: [5],
-        }}
-        onMouseOver={() => setState(true)}
-        onMouseLeave={() => setState(false)}
-        onClick={() => setState(true)}
-      >
-        <CardMedia>{icon}</CardMedia>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <Link to={title} spy={true} smooth={true}>
+        <CardActionArea
+          sx={{
+            padding: 2.5,
+            borderColor: "transparent",
+            boxShadow: "none",
+            backgroundColor: "transparent",
+            width: "100%",
+            height: "100%",
+            borderRadius: [5],
+          }}
+          onMouseOver={() => setState(true)}
+          onMouseLeave={() => setState(false)}
+          onClick={() => setState(true)}
+        >
+          <CardMedia>{icon}</CardMedia>
+          <CardContent>
+            <Typography gutterBottom variant="h6">
+              {title}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>{" "}
+      </Link>
     </Card>
   );
 }

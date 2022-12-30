@@ -2,7 +2,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import React from "react";
 
 export const education_text =
-  "During my time at university, I was able to approach many aspects of computer science and better understand how much this science is present in everything around us. I was fascinated by how vast and mutable this world is, sparking in me a great passion for this field. Thanks to my undergraduate studies, I possess an excellent Computer Science background that I wish to enrich over time.";
+  "During my time at university, I was able to approach many aspects of computer science and better understand how much this science is present in everything around us.\n I was fascinated by how vast and mutable this world is, sparking in me a great passion for this field. Thanks to my undergraduate studies, I possess an excellent Computer Science background that I wish to enrich over time.";
 
 export const educations = [
   {

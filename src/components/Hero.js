@@ -27,10 +27,12 @@ function Hero({ isMobile }) {
     justifyContent: "center",
   }));
 
+  console.log(window)
+
   const TypeW = styled("div")(({ theme }) => ({
     margin: 15,
     marginTop: "5%",
-    fontSize: { sx: "12px", sm: "12px", md: "14px", lg: "16px" },
+    fontSize: window.innerWidth  >1200 ? '15px' : window.innerWidth  >1000 ? '12px' : '10px',
   }));
 
   const typeText = [

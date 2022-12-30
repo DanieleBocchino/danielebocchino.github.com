@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import React, { useState } from "react";
 import {
+  Avatar,
   Button,
   Card,
   CardActions,
@@ -50,7 +51,7 @@ function Education() {
             : null}
 
           <Grid item xs={2} sm={4} md={8} lg={4}>
-            <Item>
+            <Item textAlign='justify'>
               <Card sx={{ background: "transparent", boxShadow: "none" }}>
                 <CardMedia
                   component="img"
@@ -61,8 +62,9 @@ function Education() {
                   <Typography
                     variant="body1"
                     color="black"
-                    fontFamily="Quicksand"
-                    fontWeight={500}
+                    textAlign='justify'
+                    style={{ whiteSpace: "pre-line" }}
+
                   >
                     {education_text}
                   </Typography>
@@ -73,7 +75,7 @@ function Education() {
           {!state
             ? educations.map((item, index) => (
                 <Grid item xs={2} sm={4} key={index}>
-                  <Item>
+                  <Item  >
                     <SpecialCard item={item} />
                   </Item>
                 </Grid>
@@ -114,7 +116,6 @@ function SpecialCard({ item }) {
         borderColor: "transparent",
         alignItems: "center",
         width: "100%",
-        marginX: 2,
       }}
     >
       <CardMedia
@@ -123,7 +124,7 @@ function SpecialCard({ item }) {
         image={item.image}
         alt="green iguana"
       />
-      <CardContent sx={{ padding: 4.5 }}>
+      <CardContent sx={{ padding: 4.5,  }}>
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>
@@ -156,12 +157,13 @@ function SpecialCard({ item }) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography variant="h4">Exams</Typography>
+          <Typography variant="h4" textAlign={'start'}>Exams</Typography>
           {item.exams
             .slice(pagination * 5 - 5, pagination * 5)
             .map((item, index) => {
               return (
                 <ListItemText
+                sx={{textAlign:'start'}}
                   key={index}
                   primary={
                     <>

@@ -119,7 +119,7 @@ function CustomProjectItem({ item, index, isVisible, time }) {
                 {item.shortDescription}
               </Typography>
             </CardContent>
-            <CardActions disableSpacing>
+            {/* <CardActions disableSpacing>
               <Button
                 variant="outlined"
                 startIcon={<AddOutlined />}
@@ -128,7 +128,7 @@ function CustomProjectItem({ item, index, isVisible, time }) {
               >
                 Show More
               </Button>
-            </CardActions>
+            </CardActions> */}
           </Card>
         </Zoom>{" "}
       </Box>

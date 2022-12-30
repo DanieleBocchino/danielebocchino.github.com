@@ -1,6 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Seymour+One&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Andika&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap);
+
+
+@font-face {
+  font-family: 'PermanentMarker';
+  src: local('PermanentMarker'), url(./fonts/PermanentMarker-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'GloriaHallelujah';
+  src: local('GloriaHallelujah'), url(./fonts/GloriaHallelujah-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./fonts/Montserrat-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'MontserratItalic';
+  src: local('MontserratItalic'), url(./fonts/Montserrat-Italic-VariableFont_wght.ttf) format('truetype');
+}
+
+
 
 *{
   margin:0;
@@ -11,7 +33,7 @@ body {
   padding: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif, 'Quicksand', 'Andika', 'Seymour One'  ;
+    sans-serif, 'Quicksand', 'Andika', 'Seymour One', 'Gloria Hallelujah'  ;
 
 }
 
