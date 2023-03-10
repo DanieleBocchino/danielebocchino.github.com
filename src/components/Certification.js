@@ -33,89 +33,59 @@ function Certification() {
   }, []);
 
   return (
-    <Box id="Certification" sx={{ flexGrow: 1 }} ref={ref}>
-      <Section>
-        <Title>Certifications</Title>
-        <Grid container columns={{ xs: 2, sm: 8, lg: 12, xl: 16 }}>
-          {certifications.map((item, index) => (
-            <Grid item xs={2} sm={4} key={index}>
-              <Item>
-                <CertificationsBadge
-                  item={item}
-                  index={index}
-                  time={certifications.length + index * 500}
-                  animation={isVisible}
-                />
-              </Item>
-            </Grid>
-          ))}
-        </Grid>
-      </Section>
+    <Box id="Certification" sx={{ flexGrow: 1, mt: 10, mb: 10 }} ref={ref}>
+      <Title dark>Certifications</Title>
+      <Grid container columns={{ xs: 2, sm: 8, lg: 12, xl: 16 }}>
+        {certifications.map((item, index) => (
+          <Grid item xs={2} sm={4} key={index}>
+            <CertificationsBadge
+              item={item}
+              index={index}
+              time={certifications.length + index * 500}
+              animation={isVisible}
+            />
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 }
 
 function CertificationsBadge({ item, index, time, animation }) {
   return (
-    <>
-      <Zoom
-        in={animation}
-        unmountOnExit
-        mountOnEnter
-        style={{ transitionDelay: time }}
+    <Box
+      sx={{
+        alignContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        width: "80%",
+        margin: "auto",
+      }}
+    >
+      <Link href={item.link} target="_blank">
+        <Avatar
+          sx={{
+            margin: "auto",
+            bgcolor: "transparent",
+            height: 200,
+            width: 200,
+            p: 2,
+            transition: "transform 0.15s ease-in-out",
+            "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
+          }}
+          variant="rounded"
+          src={item.img}
+        />
+      </Link>
+
+      <Button
+        variant={item.released ? "outlined" : "disabled"}
+        href={item.verification}
+        target="_blank"
       >
-        <Card sx={{ height: 250 }}>
-          <CardHeader
-            sx={{ height: 180, m: 0 }}
-            avatar={
-              <Link href={item.link} target="_blank">
-                <Avatar
-                  sx={{ bgcolor: "transparent", height: 100, width: 100 }}
-                  variant="rounded"
-                  src={item.img}
-                />
-              </Link>
-            }
-            title={
-              <Link
-                href={item.link}
-                color="inherit"
-                underline="hover"
-                target="_blank"
-              >
-                <Typography variant="subtitle1">{item.name}</Typography>
-              </Link>
-            }
-            subheader={
-              <Stack>
-                <Typography variant="subtitle2">{item.company}</Typography>
-                {item.released ? (
-                  <>
-                    <Typography variant="caption">
-                      Released: {item.released}
-                    </Typography>
-                    <Typography variant="caption">
-                      {item.expired != null
-                        ? `Expired: ${item.expired}`
-                        : "Expired: No Expired"}
-                    </Typography>
-                  </>
-                ) : null}
-              </Stack>
-            }
-          />
-          <CardContent sx={{ p: 0 }}>
-            <Button
-              variant={item.released ? "outlined" : "disabled"}
-              href={item.verification}
-              target="_blank"
-            >
-              {item.released ? " Verified Certification" : "Work in Progress"}
-            </Button>
-          </CardContent>
-        </Card>
-      </Zoom>
-    </>
+        {item.released ? " Verified Certification" : "Work in Progress"}
+      </Button>
+    </Box>
   );
 }
 

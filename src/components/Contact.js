@@ -74,6 +74,7 @@ function GridCard() {
                 transition: "transform 0.15s ease-in-out",
                 "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
                 backgroundColor: "transparent",
+                textTransform: 'none'
               }}
               fullWidth
               variant="raised"

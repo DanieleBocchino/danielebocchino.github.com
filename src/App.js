@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Certification from "./components/Certification";
 import { Box } from "@mui/material";
+import NewSkills from "./components/NewSkills";
 
 function App() {
   const [isMobile, setMobile] = useState(false);
@@ -23,11 +24,12 @@ function App() {
   }, [size]);
 
   return (
-    <Box>
+    <Box sx={{margin:'auto' ,maxWidth: 1300}}>
       <Hero isMobile={isMobile} />
       <About />
       <Education />
       <Certification />
+      <NewSkills/>
       <Skills />
       <Experience />
       <Projects />

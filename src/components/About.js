@@ -17,6 +17,7 @@ import {
 import { Link } from "react-scroll";
 import { about, extra, roles, scrollCard } from "../data/DataAbout";
 import { Section, Title, Item } from "../styles/custom_styles";
+import CountUp from "react-countup";
 
 function About({}) {
   const ref = useRef(null);
@@ -64,7 +65,11 @@ function About({}) {
                   }}
                 />
 
-                <Typography sx={{ mt: 3, mb: 2 }} variant="h5" style={{fontFamily:'GloriaHallelujah'}}>
+                <Typography
+                  sx={{ mt: 3, mb: 2 }}
+                  variant="h5"
+                  style={{ fontFamily: "GloriaHallelujah" }}
+                >
                   {roles}
                 </Typography>
                 <MuiLink
@@ -78,8 +83,8 @@ function About({}) {
                     sx={{
                       width: "100%",
                       height: "100%",
-                      maxWidth: 200,
-                      maxHeight: 240,
+                      maxWidth: 350,
+
                       m: "auto",
                       p: 2,
                       transition: "transform 0.15s ease-in-out",
@@ -87,7 +92,7 @@ function About({}) {
                     }}
                   />
                 </MuiLink>
-                {extra.map((item, index) => (
+                {/*  {extra.map((item, index) => (
                   <Box
                     key={index}
                     component="div"
@@ -110,7 +115,7 @@ function About({}) {
                       </IconButton>
                     </Tooltip>
                   </Box>
-                ))}
+                ))} */}
               </Item>
             </Grid>
           </Slide>
@@ -136,7 +141,7 @@ function About({}) {
               <Item style={{ textAlign: "left" }}>
                 {about.map((item, index) => (
                   <Stack key={index} sx={{ m: 1 }}>
-                    <Typography variant="h6" >{item.title}</Typography>
+                    <Typography variant="h6">{item.title}</Typography>
                     <Typography
                       variant="subtitle2"
                       style={{ whiteSpace: "pre-line" }}
@@ -153,7 +158,7 @@ function About({}) {
         <Grid
           container
           spacing={{ xs: 1, sm: 2 }}
-          columns={{ xs: 4, sm: 8, lg: 16, xl: 16 }}
+          columns={{ xs: 2, sm: 8, lg: 16, xl: 16 }}
           direction="row"
           justifyContent="center"
           alignItems="center"
@@ -161,12 +166,7 @@ function About({}) {
           {scrollCard.map((item, index) => (
             <Grid item xs={2} sm={4} key={index}>
               <Item sx={{ width: "90%", margin: "auto" }}>
-                <SpecialCard
-                  icon={item.icon}
-                  title={item.title}
-                  description={item.description}
-                  color={item.color}
-                />
+                <SpecialCard item={item} />
               </Item>
             </Grid>
           ))}
@@ -176,50 +176,67 @@ function About({}) {
   );
 }
 
-function SpecialCard({ icon, title, description, color }) {
+function SpecialCard({ item }) {
   const [state, setState] = useState(false);
 
   return (
-    <Card
-      sx={{
-        borderRadius: [5],
-        justifyContent: "center",
-        textAlign: "center",
-        alignItems: "center",
-        background: state ? "transparent" : "#1A2027",
-        backgroundColor: "transparent",
-        alignItems: "center",
-        boxShadow: state ? 5 : 3,
-        color: state ? color : "#ffffff",
-      }}
-    >
-      <Link to={title} spy={true} smooth={true}>
-        <CardActionArea
-          sx={{
-            padding: 2.5,
-            borderColor: "transparent",
-            boxShadow: "none",
-            backgroundColor: "transparent",
-            width: "100%",
-            height: "100%",
-            borderRadius: [5],
-          }}
-          onMouseOver={() => setState(true)}
-          onMouseLeave={() => setState(false)}
-          onClick={() => setState(true)}
-        >
-          <CardMedia>{icon}</CardMedia>
-          <CardContent>
-            <Typography gutterBottom variant="h6">
-              {title}
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              {description}
-            </Typography>
-          </CardContent>
-        </CardActionArea>{" "}
-      </Link>
-    </Card>
+    <div style={{display:'flex', justifyContent:'center',   }}>
+      <Card
+        sx={{
+          borderRadius: [5],
+          justifyContent: "center",
+          textAlign: "center",
+          alignItems: "center",
+          background: state ? "transparent" : "#1A2027",
+          backgroundColor: "transparent",
+          alignItems: "center",
+          boxShadow: state ? 5 : 3,
+          color: state ? item.color : "#ffffff",
+          width:'100%',
+          maxWidth: "400px",
+        }}
+      >
+        <Link to={item.link} spy={true} smooth={true}>
+          <CardActionArea
+            sx={{
+              padding: 2.5,
+              borderColor: "transparent",
+              boxShadow: "none",
+              backgroundColor: "transparent",
+              width: "100%",
+              height: "100%",
+              borderRadius: [5],
+            }}
+            onMouseOver={() => setState(true)}
+            onMouseLeave={() => setState(false)}
+            onClick={() => setState(true)}
+          >
+            <CardMedia>{item.icon}</CardMedia>
+            <CardContent>
+              <Typography gutterBottom variant="h6">
+                <CountUp
+                  start={0}
+                  end={item.to}
+                  duration={2.75}
+                  suffix="+"
+                  startOnMount={false}
+                  enableScrollSpy
+                  scrollSpyDelay={200}
+                >
+                  {({ countUpRef, start }) => (
+                    <Typography variant="h4" dark ref={countUpRef} />
+                  )}
+                </CountUp>
+                {item.title}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                {item.description}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Link>
+      </Card>
+    </div>
   );
 }
 

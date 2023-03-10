@@ -251,6 +251,7 @@ function Hero({ isMobile }) {
                     sx={{
                       ml: "0.5%",
                       width: "3.5%",
+                      maxWidth:50,
                       position: "absolute",
                     }}
                   >

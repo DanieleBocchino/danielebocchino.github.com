@@ -2,8 +2,14 @@ import React from "react";
 import SchoolIcon from "@mui/icons-material/School";
 import ComputerIcon from "@mui/icons-material/Computer";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import TimelineIcon from "@mui/icons-material/Timeline";
-import {  ContactPage, GitHub,  LinkedIn, } from "@mui/icons-material";
+import CodeIcon from "@mui/icons-material/Code";
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import { ContactPage, GitHub, LinkedIn } from "@mui/icons-material";
+import { educations } from "./DataEducations";
+import { certifications } from "./DataCertifications";
+import { dataSkills, programmingLanguages } from "./DataSkills";
+import { projects } from "./DataProjects";
+
 
 export const roles = "MSc Student in Computer Science";
 
@@ -23,26 +29,35 @@ export const extra = [
 export const scrollCard = [
   {
     icon: <SchoolIcon sx={{ fontSize: 50 }} />,
-    title: "Education",
-    description: "University & Certification",
+    title: "Exams",
+    link: "Education",
+    to: educations[0].exams.length + educations[1].exams.length,
+    description: "Computer Science Exams completed during Bachelor's and Master's Degree",
     color: "#4285F4",
   },
   {
-    icon: <WorkspacePremiumIcon sx={{ fontSize: 50 }} />,
-    title: "Skills",
-    description: "My Hard & Soft Skills",
+    icon: <MilitaryTechIcon sx={{ fontSize: 50 }} />,
+    title: "Certifications",
+    link: "Certification",
+    to: certifications.length,
+    description: "Professional Certifications achieved",
     color: "#DB4437",
   },
+
   {
-    icon: <TimelineIcon sx={{ fontSize: 50 }} />,
-    title: "Experience",
-    description: "My work experiences",
+    icon: <CodeIcon sx={{ fontSize: 50 }} />,
+    title: "Languages",
+    link: "Skills",
+    to: dataSkills[0].lst.length,
+    description: "Programming languages used in at least one project",
     color: "#F4B400",
   },
   {
     icon: <ComputerIcon sx={{ fontSize: 50 }} />,
     title: "Projects",
-    description: "My projects",
+    link: "Projects",
+    to: projects.length,
+    description: "Private and University projects developed",
     color: "#0F9D58",
   },
 ];

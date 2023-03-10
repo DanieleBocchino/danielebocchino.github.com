@@ -1,120 +1,317 @@
+import { TbBrandPython } from 'react-icons/tb';
+import { FaAws, FaReact } from 'react-icons/fa';
+import {SiFlutter} from 'react-icons/si'
+import React from 'react';
 
-  export const hardSkills = [
-    {
-      skill: "PYTHON",
-      value: 90,
-      icon: "/images/skills/python.png",
-    },
-    {
-      skill: "JAVA",
-      value: 70,
-      icon: "/images/skills/java.png",
-    },
-    {
-      skill: "JAVASCRIPT",
-      value: 80,
-      icon: "/images/skills/js.png",
-    },
-    {
-      skill: "DART",
-      value: 80,
-      icon: "/images/skills/dart.png",
-    },
-    {
-      skill: "TYPESCRIPT",
-      value: 70,
-      icon: "/images/skills/ts.png",
-    },
-    {
-      skill: "HTML",
-      value: 80,
-      icon: "/images/skills/html.png",
-    },
-    {
-      skill: "CSS",
-      value: 80,
-      icon: "/images/skills/css.png",
-    },
-    {
-      skill: "FLUTTER",
-      value: 90,
-      icon: "/images/skills/flutter.png",
-    },
-    {
-      skill: "REACT",
-      value: 90,
-      icon: "/images/skills/react.png",
-    },
-    {
-      skill: "GIT",
-      value: 70,
-      icon: "/images/skills/git.png",
-    },
+export const dataSkills = [
+  {
+    label: "Programming Languages",
+    lst: [
+      {
+        skill: "PYTHON",
+        value: 4.5,
+        icon: "/images/skills/python.png",
+      },
+      {
+        skill: "JAVA",
+        value: 3.5,
+        icon: "/images/skills/java.png",
+      },
+      {
+        skill: "JAVASCRIPT",
+        value: 4,
+        icon: "/images/skills/js.png",
+      },
+      {
+        skill: "DART",
+        value: 4,
+        icon: "/images/skills/dart.png",
+      },
+      {
+        skill: "TYPESCRIPT",
+        value: 3.5,
+        icon: "/images/skills/ts.png",
+      },
+      {
+        skill: "HTML",
+        value: 4,
+        icon: "/images/skills/html.png",
+      },
+      {
+        skill: "CSS",
+        value: 4,
+        icon: "/images/skills/css.png",
+      },
+      {
+        skill: "SQL",
+        value: 3.5,
+        icon: "/images/skills/postgres.png",
+      },
+    ],
+  },
+  {
+    label: "Soft Skills",
+    lst: [
+      {
+        skill: "EMPATHY",
+        value: 4.5,
+        icon: "/images/skills/empathy.png",
+      },
+      {
+        skill: "CREATIVITY",
+        value: 5,
+        icon: "/images/skills/creativity.png",
+      },
+      {
+        skill: "COMMUNICATION",
+        value: 4,
+        icon: "/images/skills/communication.png",
+      },
 
-    {
-      skill: "NOSQL",
-      value: 70,
-      icon: "/images/skills/mongo.png",
-    },
-    {
-      skill: "SQL",
-      value: 70,
-      icon: "/images/skills/postgres.png",
-    },
- 
-  ];
+      {
+        skill: "CRITICAL THINKING",
+        value: 4.5,
+        icon: "/images/skills/critical.png",
+      },
+      {
+        skill: "LEADERSHIP",
+        value: 4,
+        icon: "/images/skills/leader.png",
+      },
+      {
+        skill: "TEAMWORK",
+        value: 4.5,
+        icon: "/images/skills/team.png",
+      },
+      {
+        skill: "FLEXIBILITY",
+        value: 5,
+        icon: "/images/skills/flexibility.png",
+      },
+      {
+        skill: "PROBLEM SOLVING",
+        value: 4.5,
+        icon: "/images/skills/problem.png",
+      },
+      {
+        skill: "MOTIVATION",
+        value: 5,
+        icon: "/images/skills/motivation.png",
+      },
 
-  export const softSkills = [
-    {
-      skill: "EMPATHY",
-      value: 90,
-      icon: "/images/skills/empathy.png",
-    },
-    {
-      skill: "CREATIVITY",
-      value: 100,
-      icon: "/images/skills/creativity.png",
-    },
-    {
-      skill: "COMMUNICATION",
-      value: 80,
-      icon: "/images/skills/communication.png",
-    },
-   
-    {
-      skill: "CRITICAL THINKING",
-      value: 90,
-      icon: "/images/skills/critical.png",
-    },
-    {
-      skill: "LEADERSHIP",
-      value: 80,
-      icon: "/images/skills/leader.png",
-    },
-    {
-      skill: "TEAMWORK",
-      value: 90,
-      icon: "/images/skills/team.png",
-    },
-    {
-      skill: "FLEXIBILITY",
-      value: 100,
-      icon: "/images/skills/flexibility.png",
-    },
-    {
-      skill: "PROBLEM SOLVING",
-      value: 90,
-      icon: "/images/skills/problem.png",
-    },
-    {
-      skill: "MOTIVATION",
-      value: 100,
-      icon: "/images/skills/motivation.png",
-    },
-  
-    {
-      skill: "ORGANIZATION",
-      value: 100,
-      icon: "/images/skills/organization.png",
-    },
-  ];
+      {
+        skill: "ORGANIZATION",
+        value: 5,
+        icon: "/images/skills/organization.png",
+      },
+    ],
+  },
+  {
+    label: "Framework",
+    lst: [
+      {
+        skill: "REACT",
+        value: 4.5,
+        icon: "/images/skills/react.png",
+      },
+      {
+        skill: "FLUTTER",
+        value: 4.5,
+        icon: "/images/skills/flutter.png",
+      },
+      {
+        skill: "MATERIAL UI",
+        value: 4.5,
+        icon: "/images/skills/material.png",
+      },
+      {
+        skill: "CHAKRA UI",
+        value: 4.5,
+        icon: "/images/skills/chakra.png",
+      },
+      {
+        skill: "BULMA",
+        value: 4.5,
+        icon: "/images/skills/bulma.png",
+      },
+      {
+        skill: "BOOTSTRAP",
+        value: 4.5,
+        icon: "/images/skills/bootstrap.png",
+      },
+    ],
+  },
+  {
+    label: "Database",
+    lst: [
+      {
+        skill: "MongoDB",
+        value: 3.5,
+        icon: "/images/skills/mongo.png",
+      },
+      {
+        skill: "PostgreSQL",
+        value: 3.5,
+        icon: "/images/skills/postgres.png",
+      },
+      {
+        skill: "MySQL",
+        value: 3.5,
+        icon: "/images/skills/mysql.png",
+      },
+    ],
+  },
+];
+
+export const skills = [
+  {
+    skill: "PYTHON",
+    icon: <TbBrandPython/>,
+    value: 4.5,
+    icon: "/images/skills/python.png",
+  },
+  {
+    skill: "JAVA",
+    value: 3.5,
+    icon: "/images/skills/java.png",
+  },
+  {
+    skill: "JAVASCRIPT",
+    value: 4,
+    icon: "/images/skills/js.png",
+  },
+  {
+    skill: "DART",
+    value: 4,
+    icon: "/images/skills/dart.png",
+  },
+  {
+    skill: "TYPESCRIPT",
+    value: 3.5,
+    icon: "/images/skills/ts.png",
+  },
+  {
+    skill: "HTML",
+    value: 4,
+    icon: "/images/skills/html.png",
+  },
+  {
+    skill: "CSS",
+    value: 4,
+    icon: "/images/skills/css.png",
+  },
+  {
+    skill: "SQL",
+    value: 3.5,
+    icon: "/images/skills/postgres.png",
+  },
+];
+
+export const programmingLanguages = [
+  {
+    skill: "PYTHON",
+    value: 4.5,
+    icon: "/images/skills/python.png",
+  },
+  {
+    skill: "JAVA",
+    value: 3.5,
+    icon: "/images/skills/java.png",
+  },
+  {
+    skill: "JAVASCRIPT",
+    value: 4,
+    icon: "/images/skills/js.png",
+  },
+  {
+    skill: "DART",
+    value: 4,
+    icon: "/images/skills/dart.png",
+  },
+  {
+    skill: "TYPESCRIPT",
+    value: 3.5,
+    icon: "/images/skills/ts.png",
+  },
+  {
+    skill: "HTML",
+    value: 4,
+    icon: "/images/skills/html.png",
+  },
+  {
+    skill: "CSS",
+    value: 4,
+    icon: "/images/skills/css.png",
+  },
+  {
+    skill: "SQL",
+    value: 3.5,
+    icon: "/images/skills/postgres.png",
+  },
+];
+
+export const hardSkills = [
+  {
+    skill: "PYTHON",
+    value: 4.5,
+    icon: "/images/skills/python.png",
+  },
+  {
+    skill: "JAVA",
+    value: 3.5,
+    icon: "/images/skills/java.png",
+  },
+  {
+    skill: "JAVASCRIPT",
+    value: 4,
+    icon: "/images/skills/js.png",
+  },
+  {
+    skill: "DART",
+    value: 4,
+    icon: "/images/skills/dart.png",
+  },
+  {
+    skill: "TYPESCRIPT",
+    value: 3.5,
+    icon: "/images/skills/ts.png",
+  },
+  {
+    skill: "HTML",
+    value: 4,
+    icon: "/images/skills/html.png",
+  },
+  {
+    skill: "CSS",
+    value: 4,
+    icon: "/images/skills/css.png",
+  },
+  {
+    skill: "FLUTTER",
+    value: 4.5,
+    icon: "/images/skills/flutter.png",
+  },
+  {
+    skill: "REACT",
+    value: 4.5,
+    icon: "/images/skills/react.png",
+  },
+  {
+    skill: "GIT",
+    value: 3.5,
+    icon: "/images/skills/git.png",
+  },
+
+  {
+    skill: "NOSQL",
+    value: 3.5,
+    icon: "/images/skills/mongo.png",
+  },
+  {
+    skill: "SQL",
+    value: 3.5,
+    icon: "/images/skills/postgres.png",
+  },
+];
+
+export const softSkills = [];
