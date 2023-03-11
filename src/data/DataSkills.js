@@ -11,6 +11,11 @@ import {
   FlutterSVG,
   GitSVG,
   CreativeSVG,
+  CriticalSVG,
+  MotivationSVG,
+  OrganizationSVG,
+  TeamSVG,
+  AnalyticsSVG,
 } from "../functions/CustomSVG";
 
 export const dataSkills = [
@@ -374,7 +379,7 @@ export const mainSkills = [
     ),
   },
   {
-    skill: "REACT",
+    skill: "React",
     value: 4.5,
     icon: <FaPython />,
     iconHover: "/images/mainSkills/python-hover.svg",
@@ -421,13 +426,93 @@ export const mainSkills = [
       </Typography>
     ),
   },
-
   {
-    skill: "CREATIVE",
+    skill: "Motivation",
+    value: 4.5,
+    icon: <FaPython />,
+    iconHover: "/images/mainSkills/python-hover.svg",
+    svg: <MotivationSVG />,
+
+    description: (
+      <Typography>
+        Python is my favorite programming language, I have used it in different
+        projects and in different fields such as Data Science, Machine Learning
+        and software development These uses have ensured a great deal of
+        experience and ability to use in each field.
+      </Typography>
+    ),
+  },
+  {
+    skill: "Creativity",
     value: 4.5,
     icon: <FaPython />,
     iconHover: "/images/mainSkills/python-hover.svg",
     svg: <CreativeSVG />,
+
+    description: (
+      <Typography>
+        Python is my favorite programming language, I have used it in different
+        projects and in different fields such as Data Science, Machine Learning
+        and software development These uses have ensured a great deal of
+        experience and ability to use in each field.
+      </Typography>
+    ),
+  },
+  {
+    skill: "Problem Solving",
+    value: 4.5,
+    icon: <FaPython />,
+    iconHover: "/images/mainSkills/python-hover.svg",
+    svg: <CriticalSVG />,
+
+    description: (
+      <Typography>
+        Python is my favorite programming language, I have used it in different
+        projects and in different fields such as Data Science, Machine Learning
+        and software development These uses have ensured a great deal of
+        experience and ability to use in each field.
+      </Typography>
+    ),
+  },
+  
+  {
+    skill: "ORGANIZATION",
+    value: 4.5,
+    icon: <FaPython />,
+    iconHover: "/images/mainSkills/python-hover.svg",
+    svg: <OrganizationSVG />,
+
+    description: (
+      <Typography>
+        Python is my favorite programming language, I have used it in different
+        projects and in different fields such as Data Science, Machine Learning
+        and software development These uses have ensured a great deal of
+        experience and ability to use in each field.
+      </Typography>
+    ),
+  },
+  {
+    skill: "TEAM",
+    value: 4.5,
+    icon: <FaPython />,
+    iconHover: "/images/mainSkills/python-hover.svg",
+    svg: <TeamSVG />,
+
+    description: (
+      <Typography>
+        Python is my favorite programming language, I have used it in different
+        projects and in different fields such as Data Science, Machine Learning
+        and software development These uses have ensured a great deal of
+        experience and ability to use in each field.
+      </Typography>
+    ),
+  },
+  {
+    skill: "ANALYTICS",
+    value: 4.5,
+    icon: <FaPython />,
+    iconHover: "/images/mainSkills/python-hover.svg",
+    svg: <AnalyticsSVG />,
 
     description: (
       <Typography>
