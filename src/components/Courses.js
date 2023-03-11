@@ -16,7 +16,7 @@ import { certifications } from "../data/DataCertifications";
 import { Stack } from "@mui/system";
 import { Section, Title, Item } from "../styles/custom_styles";
 
-function Certification() {
+function Courses() {
   const ref = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -33,8 +33,8 @@ function Certification() {
   }, []);
 
   return (
-    <Box id="Certification" sx={{ flexGrow: 1, mt: 10, mb: 10 }} ref={ref}>
-      <Title dark>Certifications</Title>
+    <Box id="Courses" sx={{ flexGrow: 1, mt: 10, mb: 10 }} ref={ref}>
+      <Title dark>Extra Courses</Title>
       <Grid container columns={{ xs: 2, sm: 8, lg: 12, xl: 16 }}>
         {certifications.map((item, index) => (
           <Grid item xs={2} sm={4} key={index}>
@@ -95,4 +95,4 @@ function CertificationsBadge({ item, index, time, animation }) {
   );
 }
 
-export default Certification;
+export default Courses;

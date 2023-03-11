@@ -1,7 +1,8 @@
 import { Avatar, Button, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
-import { skills } from "../data/DataSkills";
+import { mainSkills, skills } from "../data/DataSkills";
+import CustomSVG from "../functions/CustomSVG";
 import { Section, Title } from "../styles/custom_styles";
 
 function NewSkills() {
@@ -25,7 +26,7 @@ function NewSkills() {
       <Section dark>
         <Title dark>Skills</Title>
         <Grid container columns={{ xs: 2, sm: 8, lg: 12, xl: 16 }}>
-          {skills.map((item, index) => (
+          {mainSkills.map((item, index) => (
             <Grid item xs={2} sm={4} key={index}>
               <SkillsBadge
                 item={item}
@@ -52,21 +53,7 @@ function SkillsBadge({ item, index, time, animation }) {
         margin: "auto",
       }}
     >
-      <Avatar
-        sx={{
-          margin: "auto",
-          bgcolor: "transparent",
-          height: 50,
-          width: 50,
-          p: 2,
-          transition: "transform 0.15s ease-in-out",
-          "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
-        }}
-        variant="rounded"
-        src={item.icon}
-      />
-
-      
+      {item.svg}
     </Box>
   );
 }
