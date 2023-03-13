@@ -1,22 +1,29 @@
 import { TbBrandPython } from "react-icons/tb";
 import { FaAws, FaReact, FaPython } from "react-icons/fa";
 import { SiFlutter } from "react-icons/si";
-import React from "react";
-import { Typography } from "@mui/material";
+import { Avatar, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+
+import { ReactComponent as MyPY } from "../svg/python.svg";
+import { ReactComponent as MySQL } from "../svg/sql.svg";
+import { ReactComponent as MyAWS } from "../svg/aws.svg";
+import { ReactComponent as MyReact } from "../svg/react.svg";
+import { ReactComponent as MyFlutter } from "../svg/flutter.svg";
+import { ReactComponent as MyGit } from "../svg/git.svg";
+import { ReactComponent as MyCreative } from "../svg/creative.svg";
+import { ReactComponent as MyCuriosity } from "../svg/critical.svg";
+import { ReactComponent as MyMotivation } from "../svg/motivation.svg";
+import { ReactComponent as MyLeadership } from "../svg/organization.svg";
+import { ReactComponent as MyCritical } from "../svg/team.svg";
+import { ReactComponent as MyAnalytics } from "../svg/analytics.svg";
 import {
-  PythonSVG,
-  SqlSVG,
-  AwsSVG,
-  ReactSVG,
-  FlutterSVG,
-  GitSVG,
-  CreativeSVG,
-  CriticalSVG,
-  MotivationSVG,
-  OrganizationSVG,
-  TeamSVG,
-  AnalyticsSVG,
-} from "../functions/CustomSVG";
+  DEFAULT_SKILL_YELLOW,
+  DEFAULT_SKILL_GREEN,
+  DEFAULT_SKILL_BLUE,
+  DEFAULT_SKILL_PURPLE,
+  DEFAULT_SKILL_ORANGE,
+  DEFAULT_SKILL_RED,
+} from "../functions/ColorFunction";
 
 export const dataSkills = [
   {
@@ -178,50 +185,6 @@ export const dataSkills = [
   },
 ];
 
-export const skills = [
-  {
-    skill: "PYTHON",
-    icon: <TbBrandPython />,
-    value: 4.5,
-    icon: "/images/skills/python.png",
-  },
-  {
-    skill: "JAVA",
-    value: 3.5,
-    icon: "/images/skills/java.png",
-  },
-  {
-    skill: "JAVASCRIPT",
-    value: 4,
-    icon: "/images/skills/js.png",
-  },
-  {
-    skill: "DART",
-    value: 4,
-    icon: "/images/skills/dart.png",
-  },
-  {
-    skill: "TYPESCRIPT",
-    value: 3.5,
-    icon: "/images/skills/ts.png",
-  },
-  {
-    skill: "HTML",
-    value: 4,
-    icon: "/images/skills/html.png",
-  },
-  {
-    skill: "CSS",
-    value: 4,
-    icon: "/images/skills/css.png",
-  },
-  {
-    skill: "SQL",
-    value: 3.5,
-    icon: "/images/skills/postgres.png",
-  },
-];
-
 export const programmingLanguages = [
   {
     skill: "PYTHON",
@@ -331,196 +294,88 @@ export const hardSkills = [
 
 export const softSkills = [];
 
-export const mainSkills = [
+export const skills = [
   {
-    skill: "PYTHON",
-    value: 4.5,
-    icon: <FaPython />,
-    svg: <PythonSVG />,
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    skill: "Python",
+    svg: MyPY,
+    options: { fill: true, color: DEFAULT_SKILL_YELLOW },
+    text:
+      "Python is my favorite programming language, I have used it in different projects and with several libraries in a lot of fields such as Data Science, Machine Learning, backend development etc..",
+  },
+
+  {
+    skill: "AWS Cloud",
+    svg: MyAWS,
+    options: { stroke: true, color: DEFAULT_SKILL_ORANGE },
+    text:
+      "I want to become a cloud solution architect. I am working on various projects and hands-on labs to gain experience and become a cloud expert.  ",
   },
   {
     skill: "SQL",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <SqlSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
-  },
-  {
-    skill: "AWS",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <AwsSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    svg: MySQL,
+    options: { color: DEFAULT_SKILL_GREEN },
+    text:
+      "I have a strong theoretical understanding of SQL, having passed an exam during my bachelor's degree. Additionally, I have worked with SQL particularly with MySQL and Postgres, on several projects.",
   },
   {
     skill: "React",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <ReactSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
-  },
-  {
-    skill: "FLUTTER",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <FlutterSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    svg: MyReact,
+    options: { stroke: true, color: DEFAULT_SKILL_BLUE },
+    text:
+      "I have excellent knowledge of React, thanks to the web applications that I have developed over the years. To date, I have built more than five web applications using this framework.",
   },
   {
     skill: "GIT",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <GitSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    svg: MyGit,
+    options: { stroke: true, color: DEFAULT_SKILL_PURPLE },
+    text:
+      "I have been using GIT for almost 8 years, and I possess a deep understanding of its usage. Additionally, I have recently acquired knowledge related to CI/CD as well.",
+  },
+  {
+    skill: "Flutter",
+    svg: MyFlutter,
+    options: { stroke: true, color: DEFAULT_SKILL_BLUE },
+    text:
+      "I independently developed a complete cross-platform application using Flutter. I find the framework very enjoyable to work with, and in my free time, I am developing additional applications using Flutter.",
   },
   {
     skill: "Motivation",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <MotivationSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    svg: MyMotivation,
+    options: { stroke: true, color: DEFAULT_SKILL_RED },
+    text:
+      "I am a highly ambitious and motivated individual, and I believe that motivation is the most significant factor influencing a person's career. For me, motivation is the driving force that pushes me to give my best and strive for excellence.",
   },
   {
     skill: "Creativity",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <CreativeSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    svg: MyCreative,
+    options: { stroke: true, color: DEFAULT_SKILL_ORANGE },
+    text:
+      "It is a characteristic that has distinguished me since I was a child. Within the groups that I have worked with, my creativity has allowed me to provide consistently innovative and groundbreaking ideas.",
   },
   {
-    skill: "Problem Solving",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <CriticalSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    skill: "Curiousity",
+    svg: MyCuriosity,
+    options: { color: DEFAULT_SKILL_GREEN },
+    text:
+    "It is a characteristic that has distinguished me since I was a child. Within the groups that I have worked with, my creativity has allowed me to provide consistently innovative and groundbreaking ideas.",
   },
-  
-  {
-    skill: "ORGANIZATION",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <OrganizationSVG />,
 
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+  {
+    skill: "Critical thinking",
+    svg: MyCritical,
+    options: { stroke: true, color: DEFAULT_SKILL_PURPLE },
+    text :"I love to analyze in detail every situation, from professional to leisure, in order to make targeted decisions aimed at maximizing gain."
   },
   {
-    skill: "TEAM",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <TeamSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    skill: "Leadership",
+    svg: MyLeadership,
+    options: { color: DEFAULT_SKILL_YELLOW },
+    text:"I like to participate enthusiastically, have a lot of self-confidence, and am very proactive within a group. For these reasons, I possess a natural aptitude for leadership "
   },
   {
-    skill: "ANALYTICS",
-    value: 4.5,
-    icon: <FaPython />,
-    iconHover: "/images/mainSkills/python-hover.svg",
-    svg: <AnalyticsSVG />,
-
-    description: (
-      <Typography>
-        Python is my favorite programming language, I have used it in different
-        projects and in different fields such as Data Science, Machine Learning
-        and software development These uses have ensured a great deal of
-        experience and ability to use in each field.
-      </Typography>
-    ),
+    skill: "Precision",
+    svg: MyAnalytics,
+    options: { stroke: true, color: DEFAULT_SKILL_RED },
+    text:"I'm a very precise and organized guy in the things I do. I love having clear outlines and action plans for every situation. I am convinced that organization and attention to detail are the basis for every success"
   },
 ];
