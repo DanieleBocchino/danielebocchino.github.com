@@ -2,19 +2,19 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import React from "react";
 import useWindowSize from "./hooks/useElementSize";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Education from "./components/Education";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
+import Hero from "./pages/Hero";
+import About from "./pages/About";
+import Education from "./pages/Education";
+import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
 import Floating from "./components/Floating";
-import Contact from "./components/Contact";
-import Experience from "./components/Experience";
-import Certification from "./components/Certification";
+import Contact from "./pages/Contact";
+import Experience from "./pages/Experience";
+import Certification from "./pages/Certification";
 import { Box } from "@mui/material";
-import NewSkills from "./components/NewSkills";
-import Courses from "./components/Courses";
+import Courses from "./pages/Courses";
+import Contacts from "./pages/Contacts";
 
 function App() {
   const [isMobile, setMobile] = useState(false);
@@ -31,12 +31,12 @@ function App() {
       <Education />
       <Certification />
       {/* <Courses /> */}
-      <NewSkills />
       <Skills />
       <Experience />
       <Projects />
-      <Contact />
-      <Footer />
+      <Contacts />
+{/*       <Contact />
+ */}      <Footer />
       <Floating />
     </Box>
   );

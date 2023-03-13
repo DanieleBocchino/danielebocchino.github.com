@@ -4,6 +4,8 @@ import { Box } from "@mui/system";
 import React from "react";
 
 function Footer() {
+  const d = new Date();
+let year = d.getFullYear();
   return (
     <Box
       sx={{
@@ -19,7 +21,7 @@ function Footer() {
       </Typography>
       <Typography variant="body2">
         {" "}
-        Copyright <Copyright fontSize="5" /> 2022
+        Copyright <Copyright fontSize="5" /> {year}
       </Typography>
     </Box>
   );

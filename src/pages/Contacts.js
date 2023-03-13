@@ -2,12 +2,14 @@ import {
   Avatar,
   Button,
   Grid,
+  Link,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
+import { contacts } from "../data/DataContacts";
 import { skills } from "../data/DataSkills";
 import {
   DEFAULT_SKILL_COLOR,
@@ -15,7 +17,7 @@ import {
 } from "../functions/ColorFunction";
 import { Section, Title } from "../styles/custom_styles";
 
-function NewSkills() {
+function Contacts() {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -32,11 +34,11 @@ function NewSkills() {
   }, []);
 
   return (
-    <Box id="Skills" sx={{ mt: 5, mb: 5 }} ref={ref}>
+    <Box id="Contacts" sx={{ mt: 5, mb: 5 }} ref={ref}>
       <Section dark>
-        <Title dark>Skills</Title>
+        <Title dark>Contacts</Title>
         <Grid container columns={{ xs: 2, sm: 8, lg: 12, xl: 16 }}>
-          {skills.map((item, index) => (
+          {contacts.map((item, index) => (
             <Grid item xs={1} sm={4} key={index}>
               <SkillsBadge
                 item={item}
@@ -70,17 +72,16 @@ function SkillsBadge({ item, index, time, animation }) {
       <CustomSVG
         Component={item.svg}
         options={item.options}
-        skill={item.skill}
+        name={item.name}
+        item={item}
         width={isXs ? 50 : isSm ? 75 : 100}
         height={isXs ? 50 : isSm ? 75 : 100}
         show_text={isXs || isSm}
-        text={item.text}
+        text={item.data}
       />
     </Box>
   );
 }
-
-export default NewSkills;
 
 function CustomSVG({
   width = 100,
@@ -92,8 +93,9 @@ function CustomSVG({
     text: false,
     color: DEFAULT_SKILL_COLOR,
   },
-  skill = "",
+  name = "",
   text = "",
+  item,
   show_text = false,
 }) {
   const [colors, setColors] = useState({
@@ -141,18 +143,22 @@ function CustomSVG({
             fontSize: "20px",
             fontWeight: 700,
           }}
-          children={skill}
+          children={name}
         />
       )}
-      <Component
-        style={{
-          fill: colors.fillColor,
-          stroke: colors.strokeColor,
-          transition: "all 0.3s ease-in-out",
-        }}
-        width={width}
-        height={height}
-      />
+      <Link href={item.href} target='_blank'>
+        <Component
+          style={{
+            fill: colors.fillColor,
+            stroke: colors.strokeColor,
+            transition: "all 0.3s ease-in-out",
+            "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
+          }}
+          width={width}
+          height={height}
+        />
+      </Link>
+
       {show_text ? (
         <Typography
           style={{
@@ -162,7 +168,7 @@ function CustomSVG({
             fontSize: "18px",
             fontWeight: 700,
           }}
-          children={skill}
+          children={name}
         />
       ) : (
         <Typography
@@ -177,3 +183,5 @@ function CustomSVG({
     </div>
   );
 }
+
+export default Contacts;
