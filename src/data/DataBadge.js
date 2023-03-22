@@ -49,6 +49,7 @@ export const badgesList = {
       />
     </a>
   ),
+
   js: (
     <a href="https://reactjs.org/" target="_blank">
       <img
@@ -65,6 +66,15 @@ export const badgesList = {
       />
     </a>
   ),
+  jupyter: (
+    <a href="https://reactjs.org/" target="_blank">
+      <img
+        alt="node.js"
+        src="https://img.shields.io/badge/Jupyter-100000?style=flat&logo=Jupyter&logoColor=FFFFFF&labelColor=424242&color=#F37626"
+      />
+    </a>
+  ),
+
   node: (
     <a href="https://reactjs.org/" target="_blank">
       <img
@@ -217,6 +227,28 @@ export const badgesList = {
       />
     </a>
   ),
-  disco:<a href='https://reactjs.org/' target="_blank"><img alt='disqus' src='https://img.shields.io/badge/Disco-100000?style=flat&logo=disqus&logoColor=FFFFFF&labelColor=424242&color=2E9FFF'/></a>,
-
+  disco: (
+    <a href="https://reactjs.org/" target="_blank">
+      <img
+        alt="disqus"
+        src="https://img.shields.io/badge/Disco-100000?style=flat&logo=disqus&logoColor=FFFFFF&labelColor=424242&color=2E9FFF"
+      />
+    </a>
+  ),
+  gitconfig: (
+    <a href="" target="_blank">
+      <img
+        alt="github pages"
+        src="https://img.shields.io/badge/GitHub_Config-100000?style=flat&logo=github pages&logoColor=white&labelColor=494949&color=222222"
+      />
+    </a>
+  ),
+  assembly: (
+    <a href="" target="_blank">
+      <img
+        alt="AssemblyScript"
+        src="https://img.shields.io/badge/Assembly-100000?style=flat&logo=AssemblyScript&logoColor=white&labelColor=494949&color=007AAC"
+      />
+    </a>
+  ),
 };

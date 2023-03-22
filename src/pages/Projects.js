@@ -11,15 +11,25 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import { project, tabs } from "../data/DataProjects";
+import { project, projects_test, tabs } from "../data/DataProjects";
 import { Item, Section, Title } from "../styles/custom_styles";
 import { FaGithub, FaLink } from "react-icons/fa";
 import { Stack } from "@mui/system";
+import { badgesList } from "../data/DataBadge";
 
 function Projects() {
   const ref = useRef(null);
   const [projects, setProjects] = useState(project);
   const [value, setValue] = React.useState(0);
+  const [elements, setElements] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/DanieleBocchino/repos")
+      .then((res) => res.json())
+      .then((json) => {
+        setElements([...json, ...projects_test]);
+      });
+  }, []);
 
   const filter = (newValue) => {
     if (newValue === 0) {
@@ -68,14 +78,23 @@ function Projects() {
           ))}
         </Tabs>
         <Divider />
-        {projects.map((item, index) => (
+        {elements.length > 0 &&
+          elements.map((item, index) => (
+            <Grid item xs={2} sm={4} key={index}>
+              <Item>
+                <GitProjects item={item} />
+                <Divider />
+              </Item>
+            </Grid>
+          ))}
+        {/* {projects.map((item, index) => (
           <Grid item xs={2} sm={4} key={index}>
             <Item>
               <Card item={item} />
               <Divider />
             </Item>
           </Grid>
-        ))}
+        ))} */}
       </Section>
     </Box>
   );
@@ -98,18 +117,20 @@ function Card({ item }) {
         component="div"
         children={item.title}
       />
+      {/*       {gitBadge(!item.repository)}
+       */}
       <Typography
         gutterBottom
         variant="body2"
         component="div"
         children={item.description}
       />
-      <Box sx={{my:2}}>
-      {item.badges.map((elem, index) => (
-        <span style={{ padding: 2 }}>{elem}</span>
-      ))}
+      <Box sx={{ my: 2 }}>
+        {item.badges.map((elem, index) => (
+          <span style={{ padding: 2 }}>{elem}</span>
+        ))}
       </Box>
-      <Stack spacing={2} direction="row" sx={{my:2}}>
+      <Stack spacing={2} direction="row" sx={{ my: 2 }}>
         {item.github && (
           <Button
             target="_blank"
@@ -125,7 +146,7 @@ function Card({ item }) {
             View GitHub
           </Button>
         )}
-         {item.link && (
+        {item.link && (
           <Button
             target="_blank"
             href={item.link}
@@ -145,26 +166,143 @@ function Card({ item }) {
   );
 }
 
-function Elevation() {
+function GitProjects({ item }) {
+  const [languages, setLanguages] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://api.github.com/repos/${item.full_name}/languages`)
+      .then((res) => res.json())
+      .then((json) => {
+        setLanguages(json);
+      });
+  }, []);
+
+  const checkBadge = (name) => {
+    switch (name) {
+      case "javascript":
+        return [badgesList.js];
+      case "jupyter notebook":
+        return [badgesList.jupyter, badgesList.python];
+      default:
+        return [badgesList[name]];
+    }
+  };
+
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={6}>
-        <Box
-          sx={{
-            p: 2,
-            bgcolor: "background.default",
-            display: "grid",
-            gridTemplateColumns: { md: "1fr 1fr" },
-            gap: 2,
-          }}
-        >
-          {[0, 1, 2, 3, 4, 6, 8, 12, 16, 24].map((elevation) => (
-            <Item key={elevation} elevation={elevation}>
-              {`elevation=${elevation}`}
-            </Item>
-          ))}
+    <Box
+      sx={{
+        backgroundColor: "transparent",
+        textAlign: "start",
+        paddingY: 2,
+      }}
+    >
+      <Typography gutterBottom variant="h5" component="div">
+        <Box style={{ display: "flex", justifyContent: "space-between" }}>
+          {item.name}
+          {gitBadge(item.private, item.full_name)}
         </Box>
-      </Grid>
-    </Grid>
+      </Typography>
+
+      <Typography
+        gutterBottom
+        variant="body2"
+        component="div"
+        children={item.description}
+      />
+      <Box sx={{ my: 2 }}>
+        {Object.keys(languages).map((elem, index) =>
+          checkBadge(elem.toLowerCase()).map((e, index) => (
+            <span style={{ padding: 2 }}>{e}</span>
+          ))
+        )}
+        {/* {item.badges.map((elem, index) => (
+          <span style={{ padding: 2 }}>{elem}</span>
+        ))} */}
+      </Box>
+
+      {/*  <Typography
+        gutterBottom
+        variant="h5"
+        component="div"
+        children={item.title}
+      />
+                           {gitBadge(item.full_name)}
+
+       
+      <Typography
+        gutterBottom
+        variant="body2"
+        component="div"
+        children={item.description}
+      />
+      <Box sx={{ my: 2 }}>
+        {item.badges.map((elem, index) => (
+          <span style={{ padding: 2 }}>{elem}</span>
+        ))}
+      </Box>
+      <Stack spacing={2} direction="row" sx={{ my: 2 }}>
+        {item.github && (
+          <Button
+            target="_blank"
+            href={item.github}
+            startIcon={<FaGithub />}
+            sx={{
+              color: "grey",
+              border: 1,
+              borderColor: "transparent",
+              "&:hover": { color: "#673ab7", borderColor: "#673ab7" },
+            }}
+          >
+            View GitHub
+          </Button>
+        )}
+        {item.link && (
+          <Button
+            target="_blank"
+            href={item.link}
+            startIcon={<FaLink />}
+            sx={{
+              color: "grey",
+              border: 1,
+              borderColor: "transparent",
+              "&:hover": { color: "lightBlue", borderColor: "lightBlue" },
+            }}
+          >
+            View Project
+          </Button>
+        )}
+      </Stack> */}
+    </Box>
   );
+}
+
+function gitBadge(private_repository, repository) {
+  const badge_list = ["stars", "forks", "contributors", "last-commit"];
+  if (private_repository) {
+    return (
+      <a href=" " target="_blank">
+        <img
+          alt="GNU Privacy Guard"
+          src="https://img.shields.io/badge/Private-100000?style=flat&logo=GNU Privacy Guard&logoColor=white&labelColor=494949&color=256637"
+        />
+      </a>
+    );
+  } else {
+    return (
+      <span style={{ margin: "1rem" }}>
+        {badge_list.map((badge, index) => (
+          <a
+            href="https://github.com/DanieleBocchino/AWS-quicksight-project"
+            target="_blank"
+            style={{ marginX: 2 }}
+          >
+            <img
+              alt={badge}
+              src={`https://img.shields.io/github/${badge}/${repository}`}
+            />
+          </a>
+        ))}
+      </span>
+    );
+  }
 }

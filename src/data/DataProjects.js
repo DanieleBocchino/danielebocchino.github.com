@@ -25,155 +25,110 @@ import { DiGitBranch } from "react-icons/di";
 import { RiFlutterFill } from "react-icons/ri";
 import { badgesList } from "./DataBadge";
 
-export const projects = [
+export const projects_test = [
   {
-    title: "My Portfolio",
-    shortDescription: "My portfolio website",
+    id: 583151213,
+    name: "My Portfolio",
     description:
       "This project include my portfolio website. The site has been create with ReactJS. \n For Styles I wanted to use the Material UI",
 
-    technology: [
-      { img: "/images/skills/react.png", name: "ReactJS" },
-      { img: "/images/skills/material.png", name: "MaterialUI" },
-    ],
-    available: [""],
-    link: "",
-    icon: <LanguageOutlined />,
-    color: "#ff9100",
+    link: "https://danielebocchino.github.io/",
+    languages: {
+      react: 0,
+      mui: 0,
+     
+    },
   },
   {
-    title: "BPE - Cloud Gaming",
-    shortDescription: "Business Process Engineer Exam Project",
+    id: 568122360,
+    name: "BPE - Cloud Gaming",
     description:
       "In this project I sis an analysis of Cloud Gaming. In particular I assumed a fake Cloud Gaming Company performed and calculated the KPI about it",
-    technology: [
-      { img: "/images/skills/e3value.png", name: "E3value" },
-      { img: "/images/skills/bizagi.png", name: "Bizagi" },
-    ],
-    available: [""],
-    link: "https://github.com/DanieleBocchino/BPE-Cloud-Gaming/",
-    icon: <School />,
-    color: "#03a9f4",
+    languages: {
+      bizagi: 0,
+      e3: 0,
+      aws: 0,
+    },
   },
   {
-    title: "SafePass - Manager",
-    shortDescription: "Mobile application realized in Flutter.",
-    description: "",
-    technology: [
-      { img: "/images/skills/flutter.png", name: "Flutter" },
-      { img: "/images/skills/material.png", name: "MaterialUI" },
-      { img: "/images/skills/python.png", name: "Python" },
-      { img: "/images/skills/flask.png", name: "Flask" },
-      { img: "/images/skills/mongo.png", name: "MongoDB" },
-    ],
-    available: [""],
-    link: null,
-    icon: <PhoneIphone />,
-    color: "#ff9100",
+    id: 515934010,
+    name: "BIS - Challenge 2020",
+
+    description:
+      "Exam project of Business Information System - The project is based on the BPI 2020 challenge of the ICPM congress, the goal of the project is Analyzing real-world business process data from BPI 2020 challenge using Disco, PM4Py, and Pandas to identify areas for improvement and propose solutions.",
+    languages: {
+      python: 0,
+      jupyter: 0,
+      colab: 0,
+      pandas: 0,
+      pm4py: 0,
+      disco: 0,
+    },
   },
   {
-    title: "BIS - Challenge 2020",
-    shortDescription: "Exam project of Business Information System ",
-    description: "",
-    technology: [
-      { img: "/images/skills/python.png", name: "Python" },
-      { img: "/images/skills/pandas.png", name: "Pandas" },
-      { img: "/images/skills/pm4py.png", name: "PM4PY" },
-      { img: "/images/skills/colab.png", name: "Google Colab" },
-      { img: "/images/skills/disco.png", name: "Disco" },
-    ],
-    available: [""],
-    link: "https://github.com/DanieleBocchino/BIS",
-    icon: <School />,
-    color: "#03a9f4",
-  },
-  {
-    title: "Ciuka - Party Game",
-    shortDescription: "Mobile application realized in Flutter.",
+    id: null,
+    name: "Ciuka - Party Game",
     description:
       "Mobile application realized in Flutter. it is a basic party game to liven up parties among friends",
-    technology: [
-      { img: "/images/skills/flutter.png", name: "Flutter" },
-      { img: "/images/skills/material.png", name: "MaterialUI" },
-      { img: "/images/skills/firebase.png", name: "Firebase" },
-    ],
-    available: [""],
     link: "https://www.b-except.com/ciuka/share.html",
-    icon: <PhoneIphone />,
-    color: "#ff9100",
+    languages: {
+      flutter: 0,
+      mui: 0,
+      firebase: 0,
+      
+    },
+    private: true,
   },
   {
-    title: "ISLab",
-    shortDescription: "Website created for ISLab of University of Milan (VAST)",
+    id: null,
+    name: "ISLab",
     description:
-      "During my research collaboration with University of Milan I created a website for ISLab Laboratory.",
-    technology: [
-      { img: "/images/skills/react.png", name: "ReactJS" },
-      { img: "/images/skills/mongo.png", name: "MongoDB" },
-      { img: "/images/skills/python.png", name: "Python" },
-      { img: "/images/skills/flask.png", name: "Flask" },
-      { img: "/images/skills/css.png", name: "CSS" },
-    ],
-    available: [""],
-    link: "https://islab.di.unimi.it/",
-    icon: <Biotech />,
-    color: "#6fbf73",
-  },
-  {
-    title: "Lora Giusta",
-    shortDescription: "Website created for a small and lovely B&B in Como",
-    description: "",
+      "Website created for ISLab of University of Milan (VAST). During my research collaboration with University of Milan I created a website for ISLab Laboratory.",
 
-    technology: [
-      { img: "/images/skills/react.png", name: "ReactJS" },
-      { img: "/images/skills/js.png", name: "Javascript" },
-      { img: "/images/skills/node.png", name: "NodeJS" },
-      { img: "/images/skills/bulma.png", name: "Bulma" },
-    ],
-    available: [""],
-    link: "https://lora-giusta.com/",
-    icon: <LanguageOutlined />,
-    color: "#ff9100",
+    link: "https://islab.di.unimi.it/",
+    languages: {
+      react: 0,
+      js: 0,
+      mongo: 0,
+      python: 0,
+      flask: 0,
+      css: 0,
+      postman: 0,
+      nginx: 0,
+    },
+    private: true,
   },
   {
-    title: "Medilett",
-    shortDescription:
-      "Platform created for department of philology at  UNIMI (PARLI')",
+    id: null,
+    name: "Lora Giusta",
+    description: "Website created for a small and lovely B&B in Como",
+    link: "https://lora-giusta.com/",
+    languages: {
+      react: 0,
+      js: 0,
+      node: 0,
+      bulma: 0,
+    },
+    private: true,
+  },
+  {
+    id: null,
+
+    name: "Medilett",
     description:
       "During my second research collaboration with University of Milan I created a private platform for Philology Department.",
+    languages: {
+      react: 0,
+      js: 0,
+      posgresql: 0,
+      python: 0,
+      flask: 0,
+      chakra: 0,
+      postman: 0,
+      nginx: 0,
+    },
 
-    technology: [
-      { img: "/images/skills/react.png", name: "ReactJS" },
-      { img: "/images/skills/python.png", name: "Python" },
-      { img: "/images/skills/flask.png", name: "Flask" },
-      { img: "/images/skills/postgres.png", name: "PostgreSQL" },
-      { img: "/images/skills/chakra.png", name: "ChakraUI" },
-    ],
-    available: [""],
-    link: null,
-    icon: <Biotech />,
-    color: "#6fbf73",
-  },
-
-  {
-    title: "Arch2Lab Project",
-    shortDescription: "Exam project of Computer Architecture II",
-    description: "",
-    technology: [{ img: "/images/skills/assembly.png", name: "Assembly" }],
-    available: [""],
-    link: "https://github.com/DanieleBocchino/arch2lab",
-    icon: <School />,
-    color: "#03a9f4",
-  },
-  {
-    title: "Arch1Lab Project",
-    shortDescription: "Exam project of Computer Architecture I",
-    description: "",
-    technology: [{ img: "/images/skills/logisim.png", name: "Logisim" }],
-    available: [""],
-    link: "https://github.com/DanieleBocchino/arch1lab",
-    icon: <School />,
-    color: "#03a9f4",
+    private: true,
   },
 ];
 
@@ -241,8 +196,9 @@ export const project = [
   },
   {
     title: "BIS - Challenge 2020",
-   
-    description:  "Exam project of Business Information System - The project is based on the BPI 2020 challenge of the ICPM congress, the goal of the project is Analyzing real-world business process data from BPI 2020 challenge using Disco, PM4Py, and Pandas to identify areas for improvement and propose solutions.",
+
+    description:
+      "Exam project of Business Information System - The project is based on the BPI 2020 challenge of the ICPM congress, the goal of the project is Analyzing real-world business process data from BPI 2020 challenge using Disco, PM4Py, and Pandas to identify areas for improvement and propose solutions.",
     available: [""],
     github: "https://github.com/DanieleBocchino/BIS",
     badges: [

@@ -3,13 +3,12 @@ import SchoolIcon from "@mui/icons-material/School";
 import ComputerIcon from "@mui/icons-material/Computer";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import CodeIcon from "@mui/icons-material/Code";
-import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import { ContactPage, GitHub, LinkedIn } from "@mui/icons-material";
 import { educations } from "./DataEducations";
 import { certifications } from "./DataCertifications";
 import { dataSkills, programmingLanguages } from "./DataSkills";
-import { projects } from "./DataProjects";
-
+import { projects_test } from "./DataProjects";
 
 export const roles = "MSc Student in Computer Science";
 
@@ -32,7 +31,8 @@ export const scrollCard = [
     title: "Exams",
     link: "Education",
     to: educations[0].exams.length + educations[1].exams.length,
-    description: "Computer Science Exams completed during Bachelor's and Master's Degree",
+    description:
+      "Computer Science Exams completed during Bachelor's and Master's Degree",
     color: "#4285F4",
   },
   {
@@ -56,7 +56,7 @@ export const scrollCard = [
     icon: <ComputerIcon sx={{ fontSize: 50 }} />,
     title: "Projects",
     link: "Projects",
-    to: projects.length,
+    to: null,
     description: "Private and University projects developed",
     color: "#0F9D58",
   },

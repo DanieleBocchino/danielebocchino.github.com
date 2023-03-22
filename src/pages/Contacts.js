@@ -37,7 +37,7 @@ function Contacts() {
     <Box id="Contacts" sx={{ mt: 5, mb: 5 }} ref={ref}>
       <Section dark>
         <Title dark>Contacts</Title>
-        <Grid container columns={{ xs: 2, sm: 8, lg: 12, xl: 16 }}>
+        <Grid container columns={{ xs: 2, sm: 8, lg: 16, xl: 16 }}>
           {contacts.map((item, index) => (
             <Grid item xs={1} sm={4} key={index}>
               <SkillsBadge
@@ -74,8 +74,8 @@ function SkillsBadge({ item, index, time, animation }) {
         options={item.options}
         name={item.name}
         item={item}
-        width={isXs ? 50 : isSm ? 75 : 100}
-        height={isXs ? 50 : isSm ? 75 : 100}
+        width={isXs ? 50 : 75}
+        height={isXs ? 50 : 75}
         show_text={isXs || isSm}
         text={item.data}
       />
@@ -146,7 +146,7 @@ function CustomSVG({
           children={name}
         />
       )}
-      <Link href={item.href} target='_blank'>
+      <Link href={item.href} target="_blank">
         <Component
           style={{
             fill: colors.fillColor,

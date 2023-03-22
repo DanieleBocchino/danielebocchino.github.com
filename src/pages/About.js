@@ -23,16 +23,26 @@ function About({}) {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [cards, setCards] = useState([]);
 
   const setVisible = () => {
     if (window.scrollY + window.innerHeight >= ref.current.offsetTop)
       setIsVisible(true);
   };
+
   useEffect(() => {
     setVisible();
   }, []);
 
   useEffect(() => {
+    fetch("https://api.github.com/users/DanieleBocchino/repos", {})
+      .then((response) => response.json())
+      .then((json) => {
+        const updatedScrollCard = [...scrollCard];
+        updatedScrollCard[3].to = json.length;
+        setCards(updatedScrollCard);
+      });
+
     if (!isVisible) window.addEventListener("scroll", setVisible);
   }, []);
 
@@ -92,30 +102,6 @@ function About({}) {
                     }}
                   />
                 </MuiLink>
-                {/*  {extra.map((item, index) => (
-                  <Box
-                    key={index}
-                    component="div"
-                    sx={{
-                      display: "inline",
-                      p: 1,
-                    }}
-                  >
-                    <Tooltip title={item.title}>
-                      <IconButton
-                        aria-label={item.title}
-                        href={item.link}
-                        target="_blank"
-                        sx={{
-                          transition: "transform 0.15s ease-in-out",
-                          "&:hover": { transform: "scale3d(1.3, 1.3, 1.3)" },
-                        }}
-                      >
-                        {item.icon}
-                      </IconButton>
-                    </Tooltip>
-                  </Box>
-                ))} */}
               </Item>
             </Grid>
           </Slide>
@@ -163,7 +149,7 @@ function About({}) {
           justifyContent="center"
           alignItems="center"
         >
-          {scrollCard.map((item, index) => (
+          {cards.map((item, index) => (
             <Grid item xs={2} sm={4} key={index}>
               <Item sx={{ width: "90%", margin: "auto" }}>
                 <SpecialCard item={item} />
@@ -180,7 +166,7 @@ function SpecialCard({ item }) {
   const [state, setState] = useState(false);
 
   return (
-    <div style={{display:'flex', justifyContent:'center',   }}>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <Card
         sx={{
           borderRadius: [5],
@@ -192,7 +178,7 @@ function SpecialCard({ item }) {
           alignItems: "center",
           boxShadow: state ? 5 : 3,
           color: state ? item.color : "#ffffff",
-          width:'100%',
+          width: "100%",
           maxWidth: "400px",
         }}
       >
