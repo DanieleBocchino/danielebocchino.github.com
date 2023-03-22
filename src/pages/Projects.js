@@ -17,27 +17,34 @@ import { FaGithub, FaLink } from "react-icons/fa";
 import { Stack } from "@mui/system";
 import { badgesList } from "../data/DataBadge";
 
-function Projects() {
+function Projects({ projects }) {
   const ref = useRef(null);
-  const [projects, setProjects] = useState(project);
   const [value, setValue] = React.useState(0);
   const [elements, setElements] = useState([]);
 
-  useEffect(() => {
+  /*  useEffect(() => {
     fetch("https://api.github.com/users/DanieleBocchino/repos")
       .then((res) => res.json())
       .then((json) => {
-        setElements([...json, ...projects_test]);
+
+        console.log(typeof(json));
+        
+        const mergedList = json.map(item1 => {
+          const item2 = projects_test.find(item2 => item2.id === item1.id);
+          return { ...item1, ...item2 };
+        });
+        
+        setElements([ ...mergedList]);
       });
-  }, []);
+  }, []); */
 
   const filter = (newValue) => {
     if (newValue === 0) {
-      return project;
+      return projects;
     } else {
       var res = [];
-      project.forEach((e) => {
-        if (e.keywords.includes(tabs[newValue].label.toLowerCase()))
+      projects.forEach((e) => {
+        if (e.languages.includes(tabs[newValue].label.toLowerCase()))
           res.push(e);
       });
       return res;
@@ -46,7 +53,7 @@ function Projects() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    setProjects(filter(newValue));
+    //setProjects(filter(newValue));
   };
 
   return (
@@ -78,8 +85,8 @@ function Projects() {
           ))}
         </Tabs>
         <Divider />
-        {elements.length > 0 &&
-          elements.map((item, index) => (
+        {projects.length > 0 &&
+          projects.map((item, index) => (
             <Grid item xs={2} sm={4} key={index}>
               <Item>
                 <GitProjects item={item} />
@@ -167,7 +174,7 @@ function Card({ item }) {
 }
 
 function GitProjects({ item }) {
-  const [languages, setLanguages] = useState([]);
+  /*   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/${item.full_name}/languages`)
@@ -175,7 +182,9 @@ function GitProjects({ item }) {
       .then((json) => {
         setLanguages(json);
       });
-  }, []);
+  }, []); */
+
+  console.log(item.languages)
 
   const checkBadge = (name) => {
     switch (name) {
@@ -210,15 +219,50 @@ function GitProjects({ item }) {
         children={item.description}
       />
       <Box sx={{ my: 2 }}>
-        {Object.keys(languages).map((elem, index) =>
-          checkBadge(elem.toLowerCase()).map((e, index) => (
-            <span style={{ padding: 2 }}>{e}</span>
-          ))
-        )}
+        {item.languages &&
+          item.languages !== undefined &&
+          item.languages.map((elem, index) =>
+            checkBadge(elem.toLowerCase()).map((e, index) => (
+              <span style={{ padding: 2 }}>{e}</span>
+            ))
+          )}
+
         {/* {item.badges.map((elem, index) => (
           <span style={{ padding: 2 }}>{elem}</span>
         ))} */}
       </Box>
+      <Stack spacing={2} direction="row" sx={{ my: 2 }}>
+        {item.html_url && (
+          <Button
+            target="_blank"
+            href={item.html_url}
+            startIcon={<FaGithub />}
+            sx={{
+              color: "grey",
+              border: 1,
+              borderColor: "transparent",
+              "&:hover": { color: "#673ab7", borderColor: "#673ab7" },
+            }}
+          >
+            View GitHub
+          </Button>
+        )}
+        {item.link && (
+          <Button
+            target="_blank"
+            href={item.link}
+            startIcon={<FaLink />}
+            sx={{
+              color: "grey",
+              border: 1,
+              borderColor: "transparent",
+              "&:hover": { color: "lightBlue", borderColor: "lightBlue" },
+            }}
+          >
+            View Project
+          </Button>
+        )}
+      </Stack>
 
       {/*  <Typography
         gutterBottom

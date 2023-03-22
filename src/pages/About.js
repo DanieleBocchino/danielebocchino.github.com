@@ -19,7 +19,7 @@ import { about, extra, roles, scrollCard } from "../data/DataAbout";
 import { Section, Title, Item } from "../styles/custom_styles";
 import CountUp from "react-countup";
 
-function About({}) {
+function About({ projects }) {
   const ref = useRef(null);
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -35,14 +35,12 @@ function About({}) {
   }, []);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/DanieleBocchino/repos", {})
-      .then((response) => response.json())
-      .then((json) => {
-        const updatedScrollCard = [...scrollCard];
-        updatedScrollCard[3].to = json.length;
-        setCards(updatedScrollCard);
-      });
+    const updatedScrollCard = [...scrollCard];
+    updatedScrollCard[3].to = projects.length;
+    setCards(updatedScrollCard);
+  }, [projects]);
 
+  useEffect(() => {
     if (!isVisible) window.addEventListener("scroll", setVisible);
   }, []);
 

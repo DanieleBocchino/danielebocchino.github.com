@@ -33,22 +33,14 @@ export const projects_test = [
       "This project include my portfolio website. The site has been create with ReactJS. \n For Styles I wanted to use the Material UI",
 
     link: "https://danielebocchino.github.io/",
-    languages: {
-      react: 0,
-      mui: 0,
-     
-    },
+    languages: ["react", "mui"],
   },
   {
     id: 568122360,
     name: "BPE - Cloud Gaming",
     description:
       "In this project I sis an analysis of Cloud Gaming. In particular I assumed a fake Cloud Gaming Company performed and calculated the KPI about it",
-    languages: {
-      bizagi: 0,
-      e3: 0,
-      aws: 0,
-    },
+    languages: ["bizagi", "e3", "aws"],
   },
   {
     id: 515934010,
@@ -56,14 +48,7 @@ export const projects_test = [
 
     description:
       "Exam project of Business Information System - The project is based on the BPI 2020 challenge of the ICPM congress, the goal of the project is Analyzing real-world business process data from BPI 2020 challenge using Disco, PM4Py, and Pandas to identify areas for improvement and propose solutions.",
-    languages: {
-      python: 0,
-      jupyter: 0,
-      colab: 0,
-      pandas: 0,
-      pm4py: 0,
-      disco: 0,
-    },
+    languages: ["python", "jupyter", "colab", "pandas", "pm4py", "disco"],
   },
   {
     id: null,
@@ -71,12 +56,7 @@ export const projects_test = [
     description:
       "Mobile application realized in Flutter. it is a basic party game to liven up parties among friends",
     link: "https://www.b-except.com/ciuka/share.html",
-    languages: {
-      flutter: 0,
-      mui: 0,
-      firebase: 0,
-      
-    },
+    languages: ["flutter", "mui", "firebase"],
     private: true,
   },
   {
@@ -86,16 +66,16 @@ export const projects_test = [
       "Website created for ISLab of University of Milan (VAST). During my research collaboration with University of Milan I created a website for ISLab Laboratory.",
 
     link: "https://islab.di.unimi.it/",
-    languages: {
-      react: 0,
-      js: 0,
-      mongo: 0,
-      python: 0,
-      flask: 0,
-      css: 0,
-      postman: 0,
-      nginx: 0,
-    },
+    languages: [
+      "react",
+      "js",
+      "mongo",
+      "python",
+      "flask",
+      "css",
+      "postman",
+      "nginx",
+    ],
     private: true,
   },
   {
@@ -103,12 +83,7 @@ export const projects_test = [
     name: "Lora Giusta",
     description: "Website created for a small and lovely B&B in Como",
     link: "https://lora-giusta.com/",
-    languages: {
-      react: 0,
-      js: 0,
-      node: 0,
-      bulma: 0,
-    },
+    languages: ["react", "js", "node", "bulma"],
     private: true,
   },
   {
@@ -117,16 +92,16 @@ export const projects_test = [
     name: "Medilett",
     description:
       "During my second research collaboration with University of Milan I created a private platform for Philology Department.",
-    languages: {
-      react: 0,
-      js: 0,
-      posgresql: 0,
-      python: 0,
-      flask: 0,
-      chakra: 0,
-      postman: 0,
-      nginx: 0,
-    },
+    languages: [
+      "react",
+      "js",
+      "posgresql",
+      "python",
+      "flask",
+      "chakra",
+      "postman",
+      "nginx",
+    ],
 
     private: true,
   },
