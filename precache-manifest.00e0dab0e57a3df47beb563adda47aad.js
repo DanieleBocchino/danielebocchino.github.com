@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "f7f0e8ec13f515d2b59b",
+    "revision": "d5cabc530633028080ad",
     "url": "/static/css/main.165ada05.chunk.css"
   },
   {
-    "revision": "f7f0e8ec13f515d2b59b",
-    "url": "/static/js/main.f7f0e8ec.chunk.js"
+    "revision": "d5cabc530633028080ad",
+    "url": "/static/js/main.d5cabc53.chunk.js"
   },
   {
     "revision": "b3920ac4a014fbe2e907",
@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/static/media/PermanentMarker-Regular.c863f802.ttf"
   },
   {
-    "revision": "88f5925529f9048eb49ac81f5360a2a3",
-    "url": "/static/media/GloriaHallelujah-Regular.88f59255.ttf"
-  },
-  {
     "revision": "52a37115b1d8d5d6ae0b0e373e692c9d",
     "url": "/static/media/Montserrat-VariableFont_wght.52a37115.ttf"
+  },
+  {
+    "revision": "88f5925529f9048eb49ac81f5360a2a3",
+    "url": "/static/media/GloriaHallelujah-Regular.88f59255.ttf"
   },
   {
     "revision": "5b315bd5a3b7fa34eef7dfd5786b90b0",
@@ -92,7 +92,19 @@ self.__precacheManifest = [
     "url": "/static/media/linkedin.bd34541d.svg"
   },
   {
-    "revision": "75f7032f24af725571af853dc23c8ec6",
+    "revision": "15e6d2820bae480a90cfedffc192e717",
+    "url": "/static/media/creedly.15e6d282.svg"
+  },
+  {
+    "revision": "84cd0721216746529b2968146aa8598c",
+    "url": "/static/media/twitter.84cd0721.svg"
+  },
+  {
+    "revision": "b02179c44be59578542ee453fb72e52b",
+    "url": "/static/media/skype.b02179c4.svg"
+  },
+  {
+    "revision": "2669692c2b8cb9f608921fe5c40221d1",
     "url": "/index.html"
   }
 ];
