@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d5cabc530633028080ad",
+    "revision": "340f12a5abce15979008",
     "url": "/static/css/main.165ada05.chunk.css"
   },
   {
-    "revision": "d5cabc530633028080ad",
-    "url": "/static/js/main.d5cabc53.chunk.js"
+    "revision": "340f12a5abce15979008",
+    "url": "/static/js/main.340f12a5.chunk.js"
   },
   {
     "revision": "b3920ac4a014fbe2e907",
@@ -16,16 +16,16 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.229c360f.js"
   },
   {
+    "revision": "88f5925529f9048eb49ac81f5360a2a3",
+    "url": "/static/media/GloriaHallelujah-Regular.88f59255.ttf"
+  },
+  {
     "revision": "c863f8028c2505f92540e0ba7c379002",
     "url": "/static/media/PermanentMarker-Regular.c863f802.ttf"
   },
   {
     "revision": "52a37115b1d8d5d6ae0b0e373e692c9d",
     "url": "/static/media/Montserrat-VariableFont_wght.52a37115.ttf"
-  },
-  {
-    "revision": "88f5925529f9048eb49ac81f5360a2a3",
-    "url": "/static/media/GloriaHallelujah-Regular.88f59255.ttf"
   },
   {
     "revision": "5b315bd5a3b7fa34eef7dfd5786b90b0",
@@ -104,7 +104,11 @@ self.__precacheManifest = [
     "url": "/static/media/skype.b02179c4.svg"
   },
   {
-    "revision": "2669692c2b8cb9f608921fe5c40221d1",
+    "revision": "f35cb798ba0f593a39f8474be890db12",
+    "url": "/static/media/resume.f35cb798.svg"
+  },
+  {
+    "revision": "69a7c318ed0b8895573af5c1b5a567c7",
     "url": "/index.html"
   }
 ];

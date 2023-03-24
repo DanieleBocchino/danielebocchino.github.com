@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.165ada05.chunk.css",
-  "main.js": "/static/js/main.d5cabc53.chunk.js",
-  "main.js.map": "/static/js/main.d5cabc53.chunk.js.map",
+  "main.js": "/static/js/main.340f12a5.chunk.js",
+  "main.js.map": "/static/js/main.340f12a5.chunk.js.map",
   "static/js/1.b3920ac4.chunk.js": "/static/js/1.b3920ac4.chunk.js",
   "static/js/1.b3920ac4.chunk.js.map": "/static/js/1.b3920ac4.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -25,8 +25,9 @@
   "static/media/creedly.15e6d282.svg": "/static/media/creedly.15e6d282.svg",
   "static/media/twitter.84cd0721.svg": "/static/media/twitter.84cd0721.svg",
   "static/media/skype.b02179c4.svg": "/static/media/skype.b02179c4.svg",
+  "static/media/resume.f35cb798.svg": "/static/media/resume.f35cb798.svg",
   "static/css/main.165ada05.chunk.css.map": "/static/css/main.165ada05.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.00e0dab0e57a3df47beb563adda47aad.js": "/precache-manifest.00e0dab0e57a3df47beb563adda47aad.js",
+  "precache-manifest.437f7cf4e9c6946f641b6807bf476d41.js": "/precache-manifest.437f7cf4e9c6946f641b6807bf476d41.js",
   "service-worker.js": "/service-worker.js"
 }
