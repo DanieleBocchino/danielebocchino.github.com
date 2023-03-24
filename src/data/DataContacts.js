@@ -8,6 +8,7 @@ import {
   DEFAULT_TWITTER,
   DEFAULT_LINKEDIN,
   DEFAULT_CREEDLY,
+  DEFAULT_SKILL_YELLOW,
 } from "../functions/ColorFunction";
 import { ReactComponent as MyGit } from "../svg/git.svg";
 import { ReactComponent as MyMail } from "../svg/mail.svg";
@@ -16,6 +17,8 @@ import { ReactComponent as MyLinkedin } from "../svg/linkedin.svg";
 import { ReactComponent as MyCreedly } from "../svg/creedly.svg";
 import { ReactComponent as MyTwitter } from "../svg/twitter.svg";
 import { ReactComponent as MySkype } from "../svg/skype.svg";
+import { ReactComponent as MyResume } from "../svg/resume.svg";
+
 
 export const contacts = [
   {
@@ -73,5 +76,13 @@ export const contacts = [
     href: `https://join.skype.com/invite/zVXdj4qawk9X`,
     svg: MySkype,
     options: { stroke: true, color: DEFAULT_SKYPE },
+  },
+  {
+    name: "Resume",
+    data: "Daniele Bocchino",
+    link: "https://danielebocchino.github.io/CV_DanieleBocchino.pdf",
+    href: `https://danielebocchino.github.io/CV_DanieleBocchino.pdf`,
+    svg: MyResume,
+    options: { stroke: true, color: DEFAULT_SKILL_YELLOW },
   },
 ];
