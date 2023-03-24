@@ -33,7 +33,7 @@ function App() {
         return res.json();
       })
       .then((json) => {
-        setProjects([...projects, ...json]);
+        setProjects([...projects, ...json].sort((a, b) => (a.name.toLowerCase()  > b.name.toLowerCase() ) ? 1 : -1))
       })
       .catch((err) => {
         console.log(err);

@@ -39,7 +39,7 @@ export const scrollCard = [
     icon: <MilitaryTechIcon sx={{ fontSize: 50 }} />,
     title: "Certifications",
     link: "Certification",
-    to: certifications.length,
+    to: certifications.length - 1 ,
     description: "Professional Certifications achieved",
     color: "#DB4437",
   },
