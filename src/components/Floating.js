@@ -25,7 +25,8 @@ function Floating() {
             position: "fixed",
             bottom: 16,
             right: 16,
-            background: RandomColor(),
+            color: "orange",
+            background: 'transparent',
           }}
         >
           <KeyboardDoubleArrowUpIcon />

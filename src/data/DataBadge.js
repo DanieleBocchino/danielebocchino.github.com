@@ -9,7 +9,7 @@ export const badgesList = {
       />
     </a>
   ),
-  mui: (
+  "material-ui": (
     <a href="https://reactjs.org/" target="_blank">
       <img
         alt="MUI"
@@ -50,7 +50,7 @@ export const badgesList = {
     </a>
   ),
 
-  js: (
+  javascript: (
     <a href="https://reactjs.org/" target="_blank">
       <img
         alt="javascript"
@@ -66,15 +66,6 @@ export const badgesList = {
       />
     </a>
   ),
-  jupyter: (
-    <a href="https://reactjs.org/" target="_blank">
-      <img
-        alt="node.js"
-        src="https://img.shields.io/badge/Jupyter-100000?style=flat&logo=Jupyter&logoColor=FFFFFF&labelColor=424242&color=#F37626"
-      />
-    </a>
-  ),
-
   node: (
     <a href="https://reactjs.org/" target="_blank">
       <img
@@ -83,7 +74,7 @@ export const badgesList = {
       />
     </a>
   ),
-  ts: (
+  typescript: (
     <a href="https://reactjs.org/" target="_blank">
       <img
         alt="typescript"
@@ -99,15 +90,8 @@ export const badgesList = {
       />
     </a>
   ),
-  aws: (
-    <a href="https://reactjs.org/" target="_blank">
-      <img
-        alt="amazon aws"
-        src="https://img.shields.io/badge/AWS-100000?style=flat&logo=amazon aws&logoColor=FFFFFF&labelColor=424242&color=FF8400"
-      />
-    </a>
-  ),
-  e3: (
+
+  e3value: (
     <a href="https://reactjs.org/" target="_blank">
       <img
         alt="e3"
@@ -203,7 +187,7 @@ export const badgesList = {
       />
     </a>
   ),
-  jupyter: (
+  "jupyter-notebook": (
     <a href="https://reactjs.org/" target="_blank">
       <img
         alt="jupyter"
@@ -239,7 +223,7 @@ export const badgesList = {
     <a href="" target="_blank">
       <img
         alt="github pages"
-        src="https://img.shields.io/badge/GitHub_Config-100000?style=flat&logo=github pages&logoColor=white&labelColor=494949&color=222222"
+        src="https://img.shields.io/badge/GitHub_Config-100000?style=flat&logo=github pages&logoColor=white&labelColor=424242&color=222222"
       />
     </a>
   ),
@@ -247,7 +231,47 @@ export const badgesList = {
     <a href="" target="_blank">
       <img
         alt="AssemblyScript"
-        src="https://img.shields.io/badge/Assembly-100000?style=flat&logo=AssemblyScript&logoColor=white&labelColor=494949&color=007AAC"
+        src="https://img.shields.io/badge/Assembly-100000?style=flat&logo=AssemblyScript&logoColor=white&labelColor=424242&color=007AAC"
+      />
+    </a>
+  ),
+  logisim: (
+    <a href="http://www.cburch.com/logisim/" target="_blank">
+      <img
+        alt="Logstash"
+        src="https://img.shields.io/badge/Logisim-100000?style=flat&logo=Logstash&logoColor=white&labelColor=494949&color=005571"
+      />
+    </a>
+  ),
+  aws: (
+    <a href="https://reactjs.org/" target="_blank">
+      <img
+        alt="amazon aws"
+        src="https://img.shields.io/badge/AWS-100000?style=flat&logo=amazon aws&logoColor=FFFFFF&labelColor=424242&color=FF8400"
+      />
+    </a>
+  ),
+  "aws-s3": (
+    <a href="https://aws.amazon.com/s3/" target="_blank">
+      <img
+        alt="Amazon-s3"
+        src="https://img.shields.io/badge/AWS_S3-100000?style=flat&logo=Amazon-s3&logoColor=white&labelColor=424242&color=569A31"
+      />
+    </a>
+  ),
+  "aws-quicksight": (
+    <a href="https://aws.amazon.com/quicksight/" target="_blank">
+      <img
+        alt="Amazon-quicksight"
+        src="https://img.shields.io/badge/AWS_Quicksight-100000?style=flat&logo=QuickLook&logoColor=white&labelColor=424242&color=22A2E3"
+      />
+    </a>
+  ),
+  "aws-lambda": (
+    <a href="https://aws.amazon.com/lambda/" target="_blank">
+      <img
+        alt="AWS lambda"
+        src="https://img.shields.io/badge/AWS_Lambda-100000?style=flat&logo=AWS lambda&logoColor=white&labelColor=494949&color=FF9900"
       />
     </a>
   ),

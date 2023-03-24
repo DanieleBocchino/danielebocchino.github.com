@@ -16,7 +16,7 @@ import { certifications } from "../data/DataCertifications";
 import { Stack } from "@mui/system";
 import { Section, Title, Item } from "../styles/custom_styles";
 
-function Certification() {
+function Certification({isSm}) {
   const ref = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -35,14 +35,15 @@ function Certification() {
   return (
     <Box id="Certification" sx={{ flexGrow: 1, mt: 10, mb: 10 }} ref={ref}>
       <Title dark>Certifications</Title>
-      <Grid container columns={{ xs: 2, sm: 8, lg: 12, xl: 16 }}>
+      <Grid container columns={{ xs: 2, sm: 8, md: 12,  lg: 12, xl: 16 }}>
         {certifications.map((item, index) => (
-          <Grid item xs={2} sm={4} key={index}>
+          <Grid item xs={1} sm={4} key={index}>
             <CertificationsBadge
               item={item}
               index={index}
               time={certifications.length + index * 500}
               animation={isVisible}
+              isSm={isSm}
             />
           </Grid>
         ))}
@@ -51,7 +52,7 @@ function Certification() {
   );
 }
 
-function CertificationsBadge({ item, index, time, animation }) {
+function CertificationsBadge({ item, index, time, animation, isSm }) {
   return (
     <Box
       sx={{
@@ -67,8 +68,8 @@ function CertificationsBadge({ item, index, time, animation }) {
           sx={{
             margin: "auto",
             bgcolor: "transparent",
-            height: 200,
-            width: 200,
+            height: isSm ? 150 :  200,
+            width:  isSm ? 150 :  200,
             p: 2,
             transition: "transform 0.15s ease-in-out",
             "&:hover": { transform: "scale3d(1.05, 1.05, 1.05)" },
