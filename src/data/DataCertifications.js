@@ -45,13 +45,13 @@ export const certifications = [
       "https://www.credly.com/badges/b727c907-695b-49ab-8205-026ea75964e7",
   },
   {
-    name: "English Language Proficiency B1",
-    img: "/images/certifications/b1.png",
-    company: "Università degli Studi di Milano",
-    released: "Sept 2022",
+    name: "IBM Professional Certificate in Data Science",
+    img: "/images/certifications/IBM-data-science.png",
+    company: "IBM",
+    released: "March 2023",
     expired: null,
-    link: "https://bestr.it/badge/show/2445",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/VBCBCYEA92YM",
     verification:
-      "https://openbadges.bestr.it/public/assertions/DyWYGQccRli7Dy5dMCItLg",
+      "https://coursera.org/share/d4afc9a5c820bc63bc63816c72aad890",
   },
 ];
