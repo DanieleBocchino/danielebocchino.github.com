@@ -24,7 +24,7 @@ import {
 import { Item, Section, Title } from "../styles/custom_styles";
 import { FaGithub, FaLink } from "react-icons/fa";
 import { Stack } from "@mui/system";
-import { badgesList } from "../data/DataBadge";
+import { badgesList, create_badge } from "../data/DataBadge";
 
 function Projects({ projects, isXs }) {
   const ref = useRef(null);
@@ -152,7 +152,9 @@ function Projects({ projects, isXs }) {
 
 export default Projects;
 
-function GitProjects({ item,isXs}) {
+
+
+function GitProjects({ item, isXs }) {
   return (
     <Box
       sx={{
@@ -175,13 +177,15 @@ function GitProjects({ item,isXs}) {
         children={item.description}
       />
       <Box sx={{ my: 2 }}>
-        {item.topics.map((elem, index) => (
-          <span
-            key={index}
-            style={{ padding: 2 }}
-            children={badgesList[elem]}
-          />
-        ))}
+        {item.topics.map((elem, index) => {
+          return (
+            <span
+              key={index}
+              style={{ padding: 2 }}
+              children={create_badge(badgesList[elem])}
+            />
+          );
+        })}
       </Box>
       <Stack spacing={2} direction="row" sx={{ my: 2 }}>
         {item.html_url && (
