@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.229c360f.js"
   },
   {
-    "revision": "88f5925529f9048eb49ac81f5360a2a3",
-    "url": "/static/media/GloriaHallelujah-Regular.88f59255.ttf"
-  },
-  {
     "revision": "c863f8028c2505f92540e0ba7c379002",
     "url": "/static/media/PermanentMarker-Regular.c863f802.ttf"
+  },
+  {
+    "revision": "88f5925529f9048eb49ac81f5360a2a3",
+    "url": "/static/media/GloriaHallelujah-Regular.88f59255.ttf"
   },
   {
     "revision": "52a37115b1d8d5d6ae0b0e373e692c9d",
