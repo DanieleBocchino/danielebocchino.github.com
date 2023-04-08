@@ -54,4 +54,24 @@ export const certifications = [
     verification:
       "https://coursera.org/share/d4afc9a5c820bc63bc63816c72aad890",
   },
+  {
+    name: "IBM Professional Certificate in Data Science",
+    img: "https://images.credly.com/size/340x340/images/2784d0d8-327c-406f-971e-9f0e15097003/image.png",
+    company: "AWS",
+    released: "March 2023",
+    expired: null,
+    link: "https://aws.amazon.com/it/training/digital/aws-cloud-quest/",
+    verification:
+      "https://www.credly.com/badges/8c590962-04a7-4a04-9777-a513bf617788",
+  },
+  {
+    name: "AWS Cloud Quest: Solutions Architect",
+    img: "https://images.credly.com/size/340x340/images/9e9e7ef7-384f-4636-8743-1b89a68fb46b/image.png",
+    company: "AWS",
+    released: "April 2023",
+    expired: null,
+    link: "https://aws.amazon.com/it/training/digital/aws-cloud-quest/",
+    verification:
+      "https://www.credly.com/badges/93259c26-48db-4df0-8cd3-21dab587f1a0",
+  },
 ];
