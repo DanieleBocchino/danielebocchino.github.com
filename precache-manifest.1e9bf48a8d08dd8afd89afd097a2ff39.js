@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "269d2fee638195037c5d",
+    "revision": "8703fdd78a40b47ae345",
     "url": "/static/css/main.165ada05.chunk.css"
   },
   {
-    "revision": "269d2fee638195037c5d",
-    "url": "/static/js/main.269d2fee.chunk.js"
+    "revision": "8703fdd78a40b47ae345",
+    "url": "/static/js/main.8703fdd7.chunk.js"
   },
   {
     "revision": "b3920ac4a014fbe2e907",
@@ -16,20 +16,20 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.229c360f.js"
   },
   {
-    "revision": "c863f8028c2505f92540e0ba7c379002",
-    "url": "/static/media/PermanentMarker-Regular.c863f802.ttf"
-  },
-  {
     "revision": "88f5925529f9048eb49ac81f5360a2a3",
     "url": "/static/media/GloriaHallelujah-Regular.88f59255.ttf"
   },
   {
-    "revision": "52a37115b1d8d5d6ae0b0e373e692c9d",
-    "url": "/static/media/Montserrat-VariableFont_wght.52a37115.ttf"
+    "revision": "c863f8028c2505f92540e0ba7c379002",
+    "url": "/static/media/PermanentMarker-Regular.c863f802.ttf"
   },
   {
     "revision": "5b315bd5a3b7fa34eef7dfd5786b90b0",
     "url": "/static/media/Montserrat-Italic-VariableFont_wght.5b315bd5.ttf"
+  },
+  {
+    "revision": "52a37115b1d8d5d6ae0b0e373e692c9d",
+    "url": "/static/media/Montserrat-VariableFont_wght.52a37115.ttf"
   },
   {
     "revision": "356232dbace46b8f8e61cab9715e986b",
@@ -108,7 +108,7 @@ self.__precacheManifest = [
     "url": "/static/media/resume.2e353fe5.svg"
   },
   {
-    "revision": "354d484f2d09e45dcc9d1ebef543be46",
+    "revision": "d78a5270330a7ced009bdc76fe08264e",
     "url": "/index.html"
   }
 ];
