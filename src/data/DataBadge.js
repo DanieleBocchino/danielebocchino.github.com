@@ -28,7 +28,7 @@ export const badgesList = {
     color: "00B0D8",
     link: "",
   },
-  material_ui: {
+  mui: {
     icon: "MUI",
     name: "MUI",
     color: "007FFF",
