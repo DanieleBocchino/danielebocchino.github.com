@@ -6,7 +6,7 @@
   "static/js/1.b3920ac4.chunk.js.map": "/static/js/1.b3920ac4.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/index.css": "/static/media/Montserrat-VariableFont_wght.52a37115.ttf",
+  "static/media/index.css": "/static/media/Montserrat-Italic-VariableFont_wght.5b315bd5.ttf",
   "static/media/python.356232db.svg": "/static/media/python.356232db.svg",
   "static/media/sql.e9442879.svg": "/static/media/sql.e9442879.svg",
   "static/media/aws.eb1f1c67.svg": "/static/media/aws.eb1f1c67.svg",
@@ -28,6 +28,6 @@
   "static/media/resume.2e353fe5.svg": "/static/media/resume.2e353fe5.svg",
   "static/css/main.165ada05.chunk.css.map": "/static/css/main.165ada05.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.1e9bf48a8d08dd8afd89afd097a2ff39.js": "/precache-manifest.1e9bf48a8d08dd8afd89afd097a2ff39.js",
+  "precache-manifest.3eea44d2b0f4c4175150ca2ae89f1eb2.js": "/precache-manifest.3eea44d2b0f4c4175150ca2ae89f1eb2.js",
   "service-worker.js": "/service-worker.js"
 }
