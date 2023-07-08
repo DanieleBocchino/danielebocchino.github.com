@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/media/PermanentMarker-Regular.c863f802.ttf"
   },
   {
-    "revision": "5b315bd5a3b7fa34eef7dfd5786b90b0",
-    "url": "/static/media/Montserrat-Italic-VariableFont_wght.5b315bd5.ttf"
-  },
-  {
     "revision": "52a37115b1d8d5d6ae0b0e373e692c9d",
     "url": "/static/media/Montserrat-VariableFont_wght.52a37115.ttf"
+  },
+  {
+    "revision": "5b315bd5a3b7fa34eef7dfd5786b90b0",
+    "url": "/static/media/Montserrat-Italic-VariableFont_wght.5b315bd5.ttf"
   },
   {
     "revision": "356232dbace46b8f8e61cab9715e986b",
