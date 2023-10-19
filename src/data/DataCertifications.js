@@ -1,5 +1,27 @@
 export const certifications = [
   {
+    name: "AWS Data Engineer - Associate",
+    img: "/images/certifications/AWS-DE.png",
+    company: "Amazon Web Services (AWS)",
+    released: "",
+    expired: "",
+    link:
+      "https://aws.amazon.com/it/certification/certified-data-engineer-associate/",
+    verification:
+      "",
+  },
+  {
+    name: "Terraform - Associate",
+    img: "/images/certifications/terraform.png",
+    company: "HashiCorp",
+    released: "Oct 2023",
+    expired: "Oct 2025",
+    link:
+      "https://www.hashicorp.com/certification/terraform-associate",
+    verification:
+      "https://www.credly.com/earner/earned/badge/27f7c554-3e41-45f2-b9fe-0afe597e5dcd",
+  },
+  /* {
     name: "AWS SysOps Administrator - Associate",
     img: "/images/certifications/AWS-SOA.png",
     company: "Amazon Web Services (AWS)",
@@ -9,7 +31,7 @@ export const certifications = [
       "https://aws.amazon.com/it/certification/certified-sysops-admin-associate/",
     verification:
       "https://www.credly.com/earner/earned/badge/27f7c554-3e41-45f2-b9fe-0afe597e5dcd",
-  },
+  }, */
   {
     name: "AWS Developer - Associate (DVA-C01)",
     img: "/images/certifications/AWS-DA.png",

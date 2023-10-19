@@ -17,7 +17,7 @@ let year = d.getFullYear();
       }}
     >
       <Typography variant="body1">
-        Daniele Bocchino | P.IVA 04038390136
+        Daniele Bocchino {/* | P.IVA 04038390136 */}
       </Typography>
       <Typography variant="body2">
         {" "}

@@ -10,7 +10,7 @@ import { certifications } from "./DataCertifications";
 import { dataSkills, programmingLanguages } from "./DataSkills";
 import { projects_test } from "./DataProjects";
 
-export const roles = "MSc Student in Computer Science";
+export const roles = "Junior Software Development Specialist";
 
 export const extra = [
   {
@@ -66,7 +66,7 @@ export const about = [
   {
     title: "👨‍💻 𝙒𝙝𝙤 𝙄 𝙖𝙢",
     text:
-      "I am Bocchino Daniele and I am a Master Student of Computer Science at University of Milan. \nWhile at the university I was able to approach many aspects of computer science and better understand how much this science is present in everything around us.\n I was fascinated by how vast and mutable this world is, sparking in me a great passion for this field. Through my undergraduate studies I possess an excellent Computer Science background that I wish to enrich over time.",
+      "I am Bocchino Daniele, and I earned my Master's degree in Computer Science from the University of Milan. \nWhile I was at the university I was able to approach many aspects of computer science and better understand how much this science is present in everything around us.\n I was fascinated by how vast and mutable this world is, sparking in me a great passion for this field. Through my undergraduate studies I possess an excellent Computer Science background that I wish to enrich over time.",
   },
   {
     title: " 🧠 𝙋𝙚𝙧𝙨𝙤𝙣𝙖𝙡 𝙏𝙧𝙖𝙞𝙩𝙨",

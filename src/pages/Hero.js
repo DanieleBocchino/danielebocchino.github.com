@@ -32,7 +32,7 @@ function Hero({ isMobile }) {
   const TypeW = styled("div")(({ theme }) => ({
     margin: 15,
     marginTop: "5%",
-    fontSize: window.innerWidth  >1200 ? '15px' : window.innerWidth  >1000 ? '12px' : '10px',
+    fontSize: window.innerWidth > 1200 ? '15px' : window.innerWidth > 1000 ? '12px' : '10px',
   }));
 
   const typeText = [
@@ -66,7 +66,7 @@ function Hero({ isMobile }) {
           .pauseFor(1500)
           .deleteChars(15)
           .typeString(
-            "<span style='color: #DB4437;'><strong>MSc Student in Computer Science<strong> </span> 👨🏼‍🎓"
+            "<span style='color: #DB4437;'><strong>Graduate in Computer Science<strong> </span> 👨🏼‍🎓"
           )
           .start();
       },
@@ -184,7 +184,7 @@ function Hero({ isMobile }) {
               <DrawerAvatar>
                 <Avatar
                   variant="rounded"
-                  src="/images/avatar.jpg"
+                  src="/images/io.jpg"
                   sx={{
                     position: "center",
                     width: "100%",
@@ -251,7 +251,7 @@ function Hero({ isMobile }) {
                     sx={{
                       ml: "0.5%",
                       width: "3.5%",
-                      maxWidth:50,
+                      maxWidth: 50,
                       position: "absolute",
                     }}
                   >
@@ -285,7 +285,7 @@ function Hero({ isMobile }) {
                       >
                         <Avatar
                           sx={{
-                            cursor:'pointer',
+                            cursor: 'pointer',
                             m: "1%",
                             height: "3%",
                             width: "2%",
@@ -332,10 +332,10 @@ function Docker({ item, setWriteState }) {
       title={item.title}
       arrow
       placement="right"
-      sx={{ color: "#123456",  }}
-      
+      sx={{ color: "#123456", }}
+
     >
-      <div style={{cursor:'pointer'}}>
+      <div style={{ cursor: 'pointer' }}>
         <Link to={item.title} spy={true} smooth={true}>
           <Avatar
             src={item.image}
