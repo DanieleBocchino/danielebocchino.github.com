@@ -1,9 +1,9 @@
 {
-  "main.css": "/static/css/main.7d3e3abb.chunk.css",
-  "main.js": "/static/js/main.baa2e673.chunk.js",
-  "main.js.map": "/static/js/main.baa2e673.chunk.js.map",
-  "static/js/1.9a1cae87.chunk.js": "/static/js/1.9a1cae87.chunk.js",
-  "static/js/1.9a1cae87.chunk.js.map": "/static/js/1.9a1cae87.chunk.js.map",
+  "main.css": "/static/css/main.abc08e08.chunk.css",
+  "main.js": "/static/js/main.19affc63.chunk.js",
+  "main.js.map": "/static/js/main.19affc63.chunk.js.map",
+  "static/js/1.bc092ebd.chunk.js": "/static/js/1.bc092ebd.chunk.js",
+  "static/js/1.bc092ebd.chunk.js.map": "/static/js/1.bc092ebd.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/index.css": "/static/media/Montserrat-Italic-VariableFont_wght.5b315bd5.ttf",
@@ -26,8 +26,8 @@
   "static/media/twitter.84cd0721.svg": "/static/media/twitter.84cd0721.svg",
   "static/media/skype.e9f8f8a5.svg": "/static/media/skype.e9f8f8a5.svg",
   "static/media/resume.2e353fe5.svg": "/static/media/resume.2e353fe5.svg",
-  "static/css/main.7d3e3abb.chunk.css.map": "/static/css/main.7d3e3abb.chunk.css.map",
+  "static/css/main.abc08e08.chunk.css.map": "/static/css/main.abc08e08.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.36514140dd932c9d1da405502f53c3a8.js": "/precache-manifest.36514140dd932c9d1da405502f53c3a8.js",
+  "precache-manifest.cb46db7fe0b1d8ec6f5680cf13d21e80.js": "/precache-manifest.cb46db7fe0b1d8ec6f5680cf13d21e80.js",
   "service-worker.js": "/service-worker.js"
 }
