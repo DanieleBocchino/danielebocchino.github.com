@@ -1,24 +1,26 @@
-name: Deploy Application
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - master  
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2  
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v1
       with:
-        node-version: '18.18.1'
+        node-version: '18.18.1' 
 
-    - name: Install Dependencies
-      run: npm install --force
+    - name: Install dependencies
+      run: npm install --force 
+
+    - name: Build
+      run: npm run build  # Build your project, if needed
 
     - name: Deploy
-      run: npm run deploy
+      run: npx gh-pages -d build  
