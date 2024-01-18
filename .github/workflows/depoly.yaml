@@ -1,4 +1,4 @@
-name: Deploy 
+name: Deploy Application
 
 on:
   push:
@@ -20,7 +20,6 @@ jobs:
     - name: Install Dependencies
       run: npm install --force
 
-    - name: Build and Deploy
+    - name: Deploy
       run: |
-        npm run build
         npm run deploy
