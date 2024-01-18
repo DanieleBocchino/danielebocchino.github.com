@@ -1,29 +1,24 @@
-import { TbBrandPython } from "react-icons/tb";
-import { FaAws, FaReact, FaPython } from "react-icons/fa";
-import { SiFlutter } from "react-icons/si";
-import { Avatar, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
 
-import { ReactComponent as MyPY } from "../svg/python.svg";
-import { ReactComponent as MySQL } from "../svg/sql.svg";
+import {
+  DEFAULT_SKILL_BLUE,
+  DEFAULT_SKILL_GREEN,
+  DEFAULT_SKILL_ORANGE,
+  DEFAULT_SKILL_PURPLE,
+  DEFAULT_SKILL_RED,
+  DEFAULT_SKILL_YELLOW,
+} from "../functions/ColorFunction";
+import { ReactComponent as MyAnalytics } from "../svg/analytics.svg";
 import { ReactComponent as MyAWS } from "../svg/aws.svg";
-import { ReactComponent as MyReact } from "../svg/react.svg";
-import { ReactComponent as MyFlutter } from "../svg/flutter.svg";
-import { ReactComponent as MyGit } from "../svg/git.svg";
 import { ReactComponent as MyCreative } from "../svg/creative.svg";
 import { ReactComponent as MyCuriosity } from "../svg/critical.svg";
+import { ReactComponent as MyFlutter } from "../svg/flutter.svg";
+import { ReactComponent as MyGit } from "../svg/git.svg";
 import { ReactComponent as MyMotivation } from "../svg/motivation.svg";
 import { ReactComponent as MyLeadership } from "../svg/organization.svg";
+import { ReactComponent as MyPY } from "../svg/python.svg";
+import { ReactComponent as MyReact } from "../svg/react.svg";
+import { ReactComponent as MySQL } from "../svg/sql.svg";
 import { ReactComponent as MyCritical } from "../svg/team.svg";
-import { ReactComponent as MyAnalytics } from "../svg/analytics.svg";
-import {
-  DEFAULT_SKILL_YELLOW,
-  DEFAULT_SKILL_GREEN,
-  DEFAULT_SKILL_BLUE,
-  DEFAULT_SKILL_PURPLE,
-  DEFAULT_SKILL_ORANGE,
-  DEFAULT_SKILL_RED,
-} from "../functions/ColorFunction";
 
 export const dataSkills = [
   {

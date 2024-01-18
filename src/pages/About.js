@@ -124,48 +124,7 @@ function About({ projects, isSm, isMd }) {
               rowSpacing={{ xs: 4, sm: 2, md: 2, lg: 1 }}
             >
               <Item style={{ textAlign: "left" }}>
-                {about.map((item, index) => {
-                  const [showFullText, setShowFullText] = useState(false);
-
-                  const handleToggleShowFullText = () => {
-                    setShowFullText(!showFullText);
-                  };
-
-                  const limitedText = item.text.slice(0, 5);
-                  const displayText = isSm
-                    ? showFullText
-                      ? item.text
-                      : limitedText
-                    : item.text;
-
-                  return (
-                    <Stack key={index} sx={{ m: 1 }}>
-                      <Typography variant="h6">{item.title}</Typography>
-                      <Typography
-                        variant="subtitle2"
-                        style={{
-                          whiteSpace: "pre-line",
-                          textAlign: isMd ? "justify" : "left",
-                        }}
-                      >
-                        {displayText}
-                        {!showFullText && isSm && (
-                          <Button
-                            sx={{
-                              color: "grey",
-                              "&:hover": {
-                                color: "orange",
-                                backgroundColor: "transparent",
-                              },
-                            }}
-                            onClick={handleToggleShowFullText}
-                            children={"READ MORE"}
-                          />
-                        )}
-                      </Typography>
-                    </Stack>
-                  );
-                })}
+                {about.map((item, index) => <AboutItem item={item} index={index} isSm={isSm} isMd={isMd}/>)}
               </Item>
             </Grid>
           </Slide>
@@ -191,6 +150,49 @@ function About({ projects, isSm, isMd }) {
     </Box>
   );
 }
+
+const AboutItem = ({ item, index, isSm, isMd }) => {
+  const [showFullText, setShowFullText] = useState(false);
+
+  const handleToggleShowFullText = () => {
+    setShowFullText(!showFullText);
+  };
+
+  const limitedText = item.text.slice(0, 5);
+  const displayText = isSm
+    ? showFullText
+      ? item.text
+      : limitedText
+    : item.text;
+
+  return (
+    <Stack key={index} sx={{ m: 1 }}>
+      <Typography variant="h6">{item.title}</Typography>
+      <Typography
+        variant="subtitle2"
+        style={{
+          whiteSpace: "pre-line",
+          textAlign: isMd ? "justify" : "left",
+        }}
+      >
+        {displayText}
+        {!showFullText && isSm && (
+          <Button
+            sx={{
+              color: "grey",
+              "&:hover": {
+                color: "orange",
+                backgroundColor: "transparent",
+              },
+            }}
+            onClick={handleToggleShowFullText}
+            children={"READ MORE"}
+          />
+        )}
+      </Typography>
+    </Stack>
+  );
+};
 
 function SpecialCard({ item }) {
   const [state, setState] = useState(false);
