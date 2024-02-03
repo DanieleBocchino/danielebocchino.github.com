@@ -11,6 +11,18 @@ export const certifications = [
       "",
   },
   {
+    name: "Cisco Certified Network - Associate (CCNA)",
+    img: "/images/certifications/ccna.png",
+    company: "Cisco",
+    released: "",
+    expired: "",
+    link:
+      "https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html",
+    verification:
+      "",
+  },
+  
+  {
     name: "Terraform - Associate",
     img: "/images/certifications/terraform.png",
     company: "HashiCorp",
