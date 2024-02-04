@@ -1,5 +1,5 @@
 export const certifications = [
-  {
+  /* {
     name: "AWS Data Engineer - Associate",
     img: "/images/certifications/AWS-DE.png",
     company: "Amazon Web Services (AWS)",
@@ -9,7 +9,7 @@ export const certifications = [
       "https://aws.amazon.com/it/certification/certified-data-engineer-associate/",
     verification:
       "",
-  },
+  }, */
   {
     name: "Cisco Certified Network - Associate (CCNA)",
     img: "/images/certifications/ccna.png",
