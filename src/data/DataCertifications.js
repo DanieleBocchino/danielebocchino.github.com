@@ -7,7 +7,7 @@ export const certifications = [
     expired: "",
     link:
       "https://aws.amazon.com/it/certification/certified-data-engineer-associate/",
-    verification:
+    verification:docker
       "",
   }, */
   {

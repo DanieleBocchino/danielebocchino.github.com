@@ -223,69 +223,6 @@ export const programmingLanguages = [
   },
 ];
 
-export const hardSkills = [
-  {
-    skill: "PYTHON",
-    value: 4.5,
-    icon: "/images/skills/python.png",
-  },
-  {
-    skill: "JAVA",
-    value: 3.5,
-    icon: "/images/skills/java.png",
-  },
-  {
-    skill: "JAVASCRIPT",
-    value: 4,
-    icon: "/images/skills/js.png",
-  },
-  {
-    skill: "DART",
-    value: 4,
-    icon: "/images/skills/dart.png",
-  },
-  {
-    skill: "TYPESCRIPT",
-    value: 3.5,
-    icon: "/images/skills/ts.png",
-  },
-  {
-    skill: "HTML",
-    value: 4,
-    icon: "/images/skills/html.png",
-  },
-  {
-    skill: "CSS",
-    value: 4,
-    icon: "/images/skills/css.png",
-  },
-  {
-    skill: "FLUTTER",
-    value: 4.5,
-    icon: "/images/skills/flutter.png",
-  },
-  {
-    skill: "REACT",
-    value: 4.5,
-    icon: "/images/skills/react.png",
-  },
-  {
-    skill: "GIT",
-    value: 3.5,
-    icon: "/images/skills/git.png",
-  },
-
-  {
-    skill: "NOSQL",
-    value: 3.5,
-    icon: "/images/skills/mongo.png",
-  },
-  {
-    skill: "SQL",
-    value: 3.5,
-    icon: "/images/skills/postgres.png",
-  },
-];
 
 export const softSkills = [];
 

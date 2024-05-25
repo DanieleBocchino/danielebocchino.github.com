@@ -52,7 +52,7 @@ function Skills() {
   );
 }
 
-function SkillsBadge({ item, index, time, animation }) {
+export function SkillsBadge({ item, index, time, animation }) {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
   const isSm = useMediaQuery(theme.breakpoints.only("sm"));
@@ -69,12 +69,12 @@ function SkillsBadge({ item, index, time, animation }) {
     >
       <CustomSVG
         Component={item.svg}
-        options={item.options}
+        options={item.options ?? {}}
         skill={item.skill}
         width={isXs ? 50 : isSm ? 75 : 100}
         height={isXs ? 50 : isSm ? 75 : 100}
         show_text={isXs || isSm}
-        text={item.text}
+        text={item.text ?? ""}
       />
     </Box>
   );

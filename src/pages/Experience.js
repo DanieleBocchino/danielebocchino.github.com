@@ -7,12 +7,12 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import React, { useState, useRef , useEffect} from "react";
+import React, { useEffect, useRef, useState } from "react";
 
+import { Avatar, Collapse, Link, Slide, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
-import { Avatar, Link, Slide } from "@mui/material";
-import { experiences } from "../data/DataExperience";
+import { experiences, hardSkills } from "../data/DataExperience";
 import { Section, Title } from "../styles/custom_styles";
 
 function Experience() {
@@ -43,6 +43,7 @@ function Experience() {
             return (
               <CustomTimeLineItem
                 key={index}
+                index={index}
                 item={item}
                 time={experiences.length - index}
                 animation={isVisible}
@@ -80,8 +81,9 @@ function Experience() {
       </Section>
     </Box>
   );
-  function CustomTimeLineItem({ item, time, animation }) {
+  function CustomTimeLineItem({ item, time, animation, index }) {
     const [mouseOver, setMouseOver] = useState(false);
+    const [openDescription, setOpenDescription] = useState(false);
 
     return (
       <Slide
@@ -91,14 +93,36 @@ function Experience() {
         unmountOnExit
         mountOnEnter
       >
-        <TimelineItem>
+        <TimelineItem onMouseOver={() => setOpenDescription(true)} onMouseLeave={() => setOpenDescription(false)}>
           <TimelineOppositeContent
             sx={{ m: "auto 0" }}
             variant="body2"
             color={"text.secondary"}
           >
-            <Typography variant="body2">{item.place}</Typography>
-            <Typography variant="caption">{item.date}</Typography>
+            <Stack spacing={1}>
+              <Typography variant="body2">{item.place}</Typography>
+              <Typography variant="caption">{item.date}</Typography>
+              <Box>
+                
+                <Stack direction="row" spacing={1} justifyContent={index %2 == 0 ? 'flex-end': 'flex-start'}>
+                  {item.main_skills && item.main_skills.map((skillItem, index) => {
+                    const skill = hardSkills.find((lang) => lang.skill.toLowerCase() === skillItem.toLowerCase());
+                    return (
+                      <Stack
+                        direction="row"
+                        key={index}
+                        flexWrap={"wrap"}
+                        alignItems="center"
+                        justifyContent={index % 2 === 0 ? 'flex-start' : 'flex-end'}
+                        spacing={1}
+                      >
+                        {skill && <img src={skill.icon} alt={skillItem} style={{ width: "20px", height: "20px", margin: "0 5px" }} />}
+                      </Stack>
+                    );
+                  })}
+                </Stack>
+              </Box>
+            </Stack>
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
@@ -116,11 +140,16 @@ function Experience() {
             </Link>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: "12px", }}>
+          <TimelineContent sx={{ py: "12px", }} >
             <Typography variant="h6" component="div">
               {item.title}
             </Typography>
-            <Typography variant="caption"> {item.shortDescription}</Typography>
+            <Typography variant="body2"> {item.shortDescription}</Typography>
+            <Collapse in={openDescription}>
+              <Typography variant="caption" dangerouslySetInnerHTML={{ __html: item.description }} />
+            </Collapse>
+
+
           </TimelineContent>
         </TimelineItem>
       </Slide>
