@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # Cambia a main se il tuo ramo predefinito è main
+      - master 
 
 jobs:
   setup:
@@ -21,11 +21,17 @@ jobs:
     - name: Install dependencies
       run: npm install --force --legacy-peer-deps
 
+    - name: Verify Dependencies
+      run: npm list
+
     - name: Build
       id: build
       run: |
         CI=false npm run build
         echo "::set-output name=build_directory::build"
+
+    - name: List Build Directory
+      run: ls -la build
 
   configure_git:
     runs-on: ubuntu-latest
