@@ -17,6 +17,30 @@ let darkTheme = createTheme({
   },
   typography: {
     fontFamily: "Montserrat",
+    h6: {
+      fontSize: '1.25rem',
+      '@media (max-width:600px)': {
+        fontSize: '0.9rem',
+      },
+    },
+    body1: {
+      fontSize: '1rem',
+      '@media (max-width:600px)': {
+        fontSize: '0.8rem',
+      },
+    },
+    body2: {
+      fontSize: '1rem',
+      '@media (max-width:600px)': {
+        fontSize: '0.6rem',
+      },
+    },
+    caption: {
+      fontSize: '0.875rem',
+      '@media (max-width:600px)': {
+        fontSize: '0.5rem',
+      },
+    },
   },
 });
 

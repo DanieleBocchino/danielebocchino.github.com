@@ -81,6 +81,7 @@ function Experience() {
       </Section>
     </Box>
   );
+  
   function CustomTimeLineItem({ item, time, animation, index }) {
     const [mouseOver, setMouseOver] = useState(false);
     const [openDescription, setOpenDescription] = useState(false);
