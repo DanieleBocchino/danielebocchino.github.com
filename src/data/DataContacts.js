@@ -80,8 +80,8 @@ export const contacts = [
   {
     name: "Resume",
     data: "Daniele Bocchino",
-    link: "https://danielebocchino.github.io/CV_DanieleBocchino.pdf",
-    href: `https://danielebocchino.github.io/CV_DanieleBocchino.pdf`,
+    link: "https://danielebocchino.github.io/resume-bocchino-daniele-2024.pdf",
+    href: `https://danielebocchino.github.io/resume-bocchino-daniele-2024.pdf`,
     svg: MyResume,
     options: { stroke: true, color: DEFAULT_SKILL_YELLOW },
   },
