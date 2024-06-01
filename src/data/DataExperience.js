@@ -10,7 +10,7 @@ export const experiences = [
     description: "As a Project Lead, I plan, manage, and create infrastructure and development for a disruptive SGR compliance project, leveraging Terraform, AWS services, and a full stack technology suite that includes React, Java, Docker, and Kubernetes.",
     date: "Jun. 2024 - Present ",
     icon: <TerminalOutlined />,
-    main_skills: ["Terraform", "AWS", "React", "Typescript","Python", "Java", "Docker", "Kubernetes"],
+    main_skills: ["Terraform", "AWS", "React", "Typescript","Python", "Java", "Docker", "Kubernetes", "Kafka"],
     color: "warning",
     link: "https://www.sgrcompliance.com/",
   },
@@ -172,6 +172,11 @@ export const hardSkills = [
     skill: "kubernetes",
     value: 3.5,
     icon: "/images/skills/kubernetes.png",
+  },
+  {
+    skill: "kafka",
+    value: 3.5,
+    icon: "/images/skills/kafka.png",
   },
   {
     skill: "terraform",
