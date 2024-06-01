@@ -40,9 +40,15 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Configure Git
+      env:
+        GH_EMAIL: ${{ secrets.GH_EMAIL }}
+        GH_USERNAME: ${{ secrets.GH_USERNAME }}
       run: |
-        git config --global user.email "${{ secrets.GH_EMAIL }}"
-        git config --global user.name "${{ secrets.GH_USERNAME }}"
+        git config --global user.email "${{ env.GH_EMAIL }}"
+        git config --global user.name "${{ env.GH_USERNAME }}"
+
+    - name: Verify Build Directory
+      run: ls -la ${{ needs.build.outputs.build_directory }}
 
     - name: Deploy
       env:
