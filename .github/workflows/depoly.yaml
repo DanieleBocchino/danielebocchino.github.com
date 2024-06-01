@@ -35,7 +35,7 @@ jobs:
         GH_USERNAME: ${{ secrets.GH_USERNAME }}
       run: |
         git config --global user.email "${{ env.GH_EMAIL }}"
-        git config --global user.name "${{ env.GH_USERNAME }}"
+        git config --global user.name "DanieleBocchino"
 
     - name: Deploy
       env:
