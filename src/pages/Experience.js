@@ -85,7 +85,30 @@ function Experience() {
     const [mouseOver, setMouseOver] = useState(false);
     const [openDescription, setOpenDescription] = useState(false);
 
+    const SkillStack = ({ item, index, hardSkills }) => (
+      <Stack
+        direction="row"
+        spacing={1}
+        justifyContent={index % 2 === 0 ? 'flex-end' : 'flex-start'}
+        flexWrap="wrap"
+        rowGap={1}
+      >
+        {item.main_skills?.map((skillItem, idx) => {
+          const skill = hardSkills.find((lang) => lang.skill.toLowerCase() === skillItem.toLowerCase());
+          return skill ? (
+            <img
+              key={idx}
+              src={skill.icon}
+              alt={skillItem}
+              style={{ width: "20px", height: "20px", margin: "0 5px" }}
+            />
+          ) : null;
+        })}
+      </Stack>
+    );
+
     return (
+
       <Slide
         direction="right"
         in={animation}
@@ -103,24 +126,8 @@ function Experience() {
               <Typography variant="body2">{item.place}</Typography>
               <Typography variant="caption">{item.date}</Typography>
               <Box>
-                
-                <Stack direction="row" spacing={1} justifyContent={index %2 == 0 ? 'flex-end': 'flex-start'}>
-                  {item.main_skills && item.main_skills.map((skillItem, index) => {
-                    const skill = hardSkills.find((lang) => lang.skill.toLowerCase() === skillItem.toLowerCase());
-                    return (
-                      <Stack
-                        direction="row"
-                        key={index}
-                        flexWrap={"wrap"}
-                        alignItems="center"
-                        justifyContent={index % 2 === 0 ? 'flex-start' : 'flex-end'}
-                        spacing={1}
-                      >
-                        {skill && <img src={skill.icon} alt={skillItem} style={{ width: "20px", height: "20px", margin: "0 5px" }} />}
-                      </Stack>
-                    );
-                  })}
-                </Stack>
+                <SkillStack item={item} index={index} hardSkills={hardSkills} />
+
               </Box>
             </Stack>
           </TimelineOppositeContent>
