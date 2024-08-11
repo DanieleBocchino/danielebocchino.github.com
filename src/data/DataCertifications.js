@@ -10,18 +10,61 @@ export const certifications = [
     verification:docker
       "",
   }, */
+  // {
+  //   name: "Cisco Certified Network - Associate (CCNA)",
+  //   img: "/images/certifications/ccna.png",
+  //   company: "Cisco",
+  //   released: "",
+  //   expired: "",
+  //   link:
+  //     "https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html",
+  //   verification:
+  //     "",
+  // },
   {
-    name: "Cisco Certified Network - Associate (CCNA)",
-    img: "/images/certifications/ccna.png",
-    company: "Cisco",
+    name: "Microsoft Certified - Azure Data Engineer Associate",
+    img: "/images/certifications/dp-203.png",
+    company: "Microsoft",
     released: "",
     expired: "",
     link:
-      "https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html",
+      "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/?practice-assessment-type=certification",
     verification:
       "",
   },
-  
+  {
+    name: "Microsoft Certified - Azure Data Fundamentals",
+    img: "/images/certifications/dp-900.png",
+    company: "Microsoft",
+    released: "Aug 2024",
+    expired: null,
+    link:
+      "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-fundamentals/?practice-assessment-type=certification",
+    verification:
+      "https://learn.microsoft.com/api/credentials/share/en-us/DanieleBocchino-5571/1722E8978F3B41DF?sharingId=B510E3A66A0CF90B",
+  },
+  {
+    name: "Microsoft Certified - Azure AI Fundamentals",
+    img: "/images/certifications/ai-900.png",
+    company: "Microsoft",
+    released: "Aug 2024",
+    expired: null,
+    link:
+      "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification",
+    verification:
+      "https://learn.microsoft.com/api/credentials/share/en-us/DanieleBocchino-5571/6845B9EFC9040143?sharingId=B510E3A66A0CF90B",
+  },
+  {
+    name: "Microsoft Certified - Azure Fundamentals",
+    img: "/images/certifications/az-900.png",
+    company: "Microsoft",
+    released: "Jul 2024",
+    expired: null,
+    link:
+      "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification",
+    verification:
+      "https://learn.microsoft.com/api/credentials/share/en-us/DanieleBocchino-5571/936C0BB6798B9272?sharingId=B510E3A66A0CF90B",
+  },
   {
     name: "Terraform - Associate",
     img: "/images/certifications/terraform.png",
@@ -33,17 +76,6 @@ export const certifications = [
     verification:
       "https://www.credly.com/badges/725c881c-5401-4c31-a585-a4854a629952/public_url",
   },
-  /* {
-    name: "AWS SysOps Administrator - Associate",
-    img: "/images/certifications/AWS-SOA.png",
-    company: "Amazon Web Services (AWS)",
-    released: "",
-    expired: "",
-    link:
-      "https://aws.amazon.com/it/certification/certified-sysops-admin-associate/",
-    verification:
-      "https://www.credly.com/earner/earned/badge/27f7c554-3e41-45f2-b9fe-0afe597e5dcd",
-  }, */
   {
     name: "AWS Developer - Associate (DVA-C01)",
     img: "/images/certifications/AWS-DA.png",
