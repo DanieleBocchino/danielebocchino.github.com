@@ -4,11 +4,22 @@ import React from "react";
 
 export const experiences = [
   {
+    place: "UBS AG",
+    title: "Software Engineer",
+    shortDescription: "US MORTGAGE MODELS and MPM & MEASUREMENT",
+    description: "",
+    date: "Oct. 2024 - Present",
+    icon: <TerminalOutlined />,
+    main_skills: ["Python", "Azure", "Pandas", "Spark", "Numpy"],
+    color: "warning",
+    link: "https://www.ubs.com/",
+  },
+  {
     place: "SGR Compliance",
     title: "Software Development Specialist",
     shortDescription: "PROJECT LEAD FOR INNOVATIVE SGR COMPLIANCE SOLUTIONS",
     description: "As a Project Lead, I plan, manage, and create infrastructure and development for a disruptive SGR compliance project, leveraging Terraform, AWS services, and a full stack technology suite that includes React, Java, Docker, and Kubernetes.",
-    date: "Jun. 2024 - Present ",
+    date: "Jun. 2024 - Sept.2024 ",
     icon: <TerminalOutlined />,
     main_skills: ["Terraform", "AWS", "React", "Typescript","Python", "Java", "Docker", "Kubernetes", "Kafka"],
     color: "warning",

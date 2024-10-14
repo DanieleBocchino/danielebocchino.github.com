@@ -10,7 +10,7 @@ import { certifications } from "./DataCertifications";
 import { dataSkills, programmingLanguages } from "./DataSkills";
 import { projects_test } from "./DataProjects";
 
-export const roles = "Software Development Specialist";
+export const roles = "Software Engineer at UBS";
 
 export const extra = [
   {
